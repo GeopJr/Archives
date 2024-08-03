@@ -1,0 +1,2 @@
+option('devel', type: 'boolean', value: false)
+option('offline_update_bundle', type: 'boolean', value: false)

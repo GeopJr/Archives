@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/dev/geopjr/Archives">
+    <file alias="ruffle.html">web/ruffle.html</file>
+    <file alias="replay.html">web/replay.html</file>
+
+    <file alias="ui.js">vendored/ui.js</file>
+    <file alias="single-filez-bundle.js">vendored/single-filez-bundle.js</file>
+    <file alias="single-filez-capture.js">vendored/single-filez-capture.js</file>
+
+    <file preprocess="xml-stripblanks">icons/scalable/actions/archive-symbolic.svg</file>
+    <file preprocess="xml-stripblanks">icons/scalable/actions/settings-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="gtk/help-overlay.ui">ui/help-overlay.ui</file>
+    <file preprocess="xml-stripblanks">ui/applicationwindow.ui</file>
+    <file preprocess="xml-stripblanks">ui/overviewtab.ui</file>
+    <file preprocess="xml-stripblanks">ui/preferences.ui</file>
+
+    <file>style.css</file>
+    <file>style-dark.css</file>
+  </gresource>
+  <gresource prefix="/dev/geopjr/Archives/replay">
+    <file alias="sw.js">vendored/sw.js</file>
+    <file alias="ui.js">vendored/ui.js</file>
+    <file alias="adblock/adblock.gz">vendored/adblock/adblock.gz</file>
+    <file alias="ruffle/ruffle.js">vendored/ruffle/ruffle.js</file>
+    %s
+  </gresource>
+</gresources>

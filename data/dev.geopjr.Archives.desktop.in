@@ -1,0 +1,14 @@
+[Desktop Entry]
+Type=Application
+Name=Archives
+Comment=Create and view web archives
+GenericName=Website Archiver
+Exec=dev.geopjr.Archives %u
+Icon=dev.geopjr.Archives
+Terminal=false
+Categories=GNOME;GTK;Utility;Archiving;
+Keywords=archive;singlefile;replayweb;flash;web;
+X-GNOME-Gettext-Domain=dev.geopjr.Archives
+# Translators: Do NOT translate or transliterate this text (these are enum types)!
+X-Purism-FormFactor=Workstation;Mobile;
+StartupNotify=true

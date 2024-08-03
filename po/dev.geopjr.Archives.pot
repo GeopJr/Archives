@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-03 19:17+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/dev.geopjr.Archives.desktop.in:4
+#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:32
+#: data/ui/overviewtab.ui:96 src/Widgets/OverviewTab.vala:22
+#: src/Widgets/OverviewTab.vala:75
+msgid "Archives"
+msgstr ""
+
+#: data/dev.geopjr.Archives.desktop.in:5
+#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:97
+msgid "Create and view web archives"
+msgstr ""
+
+#: data/dev.geopjr.Archives.desktop.in:6
+msgid "Website Archiver"
+msgstr ""
+
+#: data/dev.geopjr.Archives.desktop.in:11
+msgid "archive;singlefile;replayweb;flash;web;"
+msgstr ""
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:9
+msgid ""
+"Every day, countless of websites go offline for good. High server costs, "
+"government censorship, venture capitalism are some of the threats, many of "
+"your favorite websites are facing."
+msgstr ""
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:12
+msgid ""
+"Archives allows you to archive any website, including its assets, into a "
+"self-contained hybrid HTML/ZIP. These HTML files can be viewed in any "
+"browser (or in-app), be shared or be extracted like a regular ZIP file. "
+"Archives can additionally view WARC, WACZ, HAR and SWF files."
+msgstr ""
+
+#: data/ui/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: data/ui/help-overlay.ui:14
+msgid "Show Preferences"
+msgstr ""
+
+#: data/ui/help-overlay.ui:20
+msgid "About"
+msgstr ""
+
+#: data/ui/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: data/ui/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: data/ui/overviewtab.ui:14
+msgid "Go Home"
+msgstr ""
+
+#. translators: verb
+#: data/ui/overviewtab.ui:25
+msgid "Archive"
+msgstr ""
+
+#: data/ui/overviewtab.ui:39
+msgid "Menu"
+msgstr ""
+
+#: data/ui/overviewtab.ui:67
+msgid "Back"
+msgstr ""
+
+#: data/ui/overviewtab.ui:73
+msgid "Forward"
+msgstr ""
+
+#: data/ui/overviewtab.ui:105
+msgid "Archive a Website"
+msgstr ""
+
+#: data/ui/overviewtab.ui:115
+msgid "Open a HTML, WARC, SWF file"
+msgstr ""
+
+#: data/ui/overviewtab.ui:138
+msgid "Preferences"
+msgstr ""
+
+#: data/ui/overviewtab.ui:142
+msgid "Keyboard Shortcuts"
+msgstr ""
+
+#: data/ui/overviewtab.ui:146
+msgid "About Archives"
+msgstr ""
+
+#: data/ui/preferences.ui:12
+msgid "General"
+msgstr ""
+
+#: data/ui/preferences.ui:15
+msgid "Archiving"
+msgstr ""
+
+#: data/ui/preferences.ui:19
+msgid "Custom User Agent"
+msgstr ""
+
+#: data/ui/preferences.ui:25
+msgid "Compress HTML"
+msgstr ""
+
+#: data/ui/preferences.ui:30
+msgid "Compress CSS"
+msgstr ""
+
+#: data/ui/preferences.ui:35
+msgid "Set Content Security Policy"
+msgstr ""
+
+#: data/ui/preferences.ui:36
+msgid "Prevent external sources from being loaded in the archives"
+msgstr ""
+
+#: data/ui/preferences.ui:41
+msgid "Remove Hidden Elements"
+msgstr ""
+
+#: data/ui/preferences.ui:42
+msgid "Non-visible elements won't be archived"
+msgstr ""
+
+#: data/ui/preferences.ui:47
+msgid "Remove Unused Styles"
+msgstr ""
+
+#: data/ui/preferences.ui:48
+msgid "Styles that do not match any element will be removed"
+msgstr ""
+
+#: data/ui/preferences.ui:53
+msgid "Remove Unused Fonts"
+msgstr ""
+
+#: data/ui/preferences.ui:58
+msgid "Remove Iframes"
+msgstr ""
+
+#: data/ui/preferences.ui:63
+msgid "Display Infobar"
+msgstr ""
+
+#: data/ui/preferences.ui:64
+msgid ""
+"If the browser has the SingleFile extension installed, the archived page "
+"will display the archive date at the top right"
+msgstr ""
+
+#: data/ui/preferences.ui:69
+msgid "Embed Infobar"
+msgstr ""
+
+#: data/ui/preferences.ui:70
+msgid ""
+"Embed the infobar in the page so it's visible even if the browser does not "
+"have the SingleFile extension installed"
+msgstr ""
+
+#: data/ui/preferences.ui:75
+msgid "Save Deferred Images"
+msgstr ""
+
+#: data/ui/preferences.ui:76
+msgid ""
+"Images that load only when they become visible through scrolling, will be "
+"archived"
+msgstr ""
+
+#: data/ui/preferences.ui:81
+msgid "Block Videos"
+msgstr ""
+
+#: data/ui/preferences.ui:82
+msgid "Videos won't be archived"
+msgstr ""
+
+#: data/ui/preferences.ui:87
+msgid "Block Audio Files"
+msgstr ""
+
+#: data/ui/preferences.ui:88
+msgid "Audio files won't be archived"
+msgstr ""
+
+#: data/ui/preferences.ui:93
+msgid "Block Scripts"
+msgstr ""
+
+#: data/ui/preferences.ui:94
+msgid "Scripts won't be archived"
+msgstr ""
+
+#: data/ui/preferences.ui:99
+msgid "Block Images"
+msgstr ""
+
+#: data/ui/preferences.ui:100
+msgid "Images won't be archived"
+msgstr ""
+
+#: data/ui/preferences.ui:105
+msgid "Block Styles"
+msgstr ""
+
+#: data/ui/preferences.ui:106
+msgid "Styles won't be archived"
+msgstr ""
+
+#: data/ui/preferences.ui:111
+msgid "Block Fonts"
+msgstr ""
+
+#: data/ui/preferences.ui:112
+msgid "Fonts won't be archived"
+msgstr ""
+
+#: data/ui/preferences.ui:119
+msgid "ReplayWeb.page"
+msgstr ""
+
+#: data/ui/preferences.ui:122
+msgid "Block Ads"
+msgstr ""
+
+#. translators: Name <email@domain.com> or Name https://website.example
+#: src/Application.vala:162
+msgid "translator-credits"
+msgstr ""
+
+#: src/Application.vala:164
+msgid "Donate"
+msgstr ""
+
+#: src/Application.vala:168
+msgid "Libraries"
+msgstr ""
+
+#: src/Views/ArchivePage.vala:99
+msgid "Save Archive"
+msgstr ""
+
+#: src/Widgets/OverviewTab.vala:96
+msgid "All Supported Files"
+msgstr ""
+
+#: src/Widgets/OverviewTab.vala:107
+msgid "Open"
+msgstr ""

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<requires lib="gtk" version="4.0" />
+	<requires lib="Adw" version="1.0" />
+	<template class="ArchivesDialogsPreferences" parent="AdwPreferencesDialog">
+		<property name="content-width">800</property>
+		<property name="content-height">600</property>
+		<property name="search-enabled">True</property>
+		<child>
+			<object class="AdwPreferencesPage">
+				<property name="icon_name">settings-symbolic</property>
+				<property name="title" translatable="yes">General</property>
+				<child>
+					<object class="AdwPreferencesGroup">
+						<property name="title" translatable="yes">Archiving</property>
+						<child>
+							<object class="AdwEntryRow" id="user_agent_entry">
+								<property name="show-apply-button">0</property>
+								<property name="title" translatable="yes">Custom User Agent</property>
+								<property name="input-purpose">free-form</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="compress_html_switch">
+								<property name="title" translatable="yes">Compress HTML</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="compress_css_switch">
+								<property name="title" translatable="yes">Compress CSS</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="csp_switch">
+								<property name="title" translatable="yes">Set Content Security Policy</property>
+								<property name="subtitle" translatable="yes">Prevent external sources from being loaded in the archives</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="remove_hidden_elements_switch">
+								<property name="title" translatable="yes">Remove Hidden Elements</property>
+								<property name="subtitle" translatable="yes">Non-visible elements won't be archived</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="remove_unused_styles_switch">
+								<property name="title" translatable="yes">Remove Unused Styles</property>
+								<property name="subtitle" translatable="yes">Styles that do not match any element will be removed</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="remove_unused_fonts_switch">
+								<property name="title" translatable="yes">Remove Unused Fonts</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="remove_iframes_switch">
+								<property name="title" translatable="yes">Remove Iframes</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="display_infobar_switch">
+								<property name="title" translatable="yes">Display Infobar</property>
+								<property name="subtitle" translatable="yes">If the browser has the SingleFile extension installed, the archived page will display the archive date at the top right</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="include_infobar_switch">
+								<property name="title" translatable="yes">Embed Infobar</property>
+								<property name="subtitle" translatable="yes">Embed the infobar in the page so it's visible even if the browser does not have the SingleFile extension installed</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="save_deferred_images_switch">
+								<property name="title" translatable="yes">Save Deferred Images</property>
+								<property name="subtitle" translatable="yes">Images that load only when they become visible through scrolling, will be archived</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="block_video_switch">
+								<property name="title" translatable="yes">Block Videos</property>
+								<property name="subtitle" translatable="yes">Videos won't be archived</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="block_audio_switch">
+								<property name="title" translatable="yes">Block Audio Files</property>
+								<property name="subtitle" translatable="yes">Audio files won't be archived</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="block_scripts_switch">
+								<property name="title" translatable="yes">Block Scripts</property>
+								<property name="subtitle" translatable="yes">Scripts won't be archived</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="block_images_switch">
+								<property name="title" translatable="yes">Block Images</property>
+								<property name="subtitle" translatable="yes">Images won't be archived</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="block_styles_switch">
+								<property name="title" translatable="yes">Block Styles</property>
+								<property name="subtitle" translatable="yes">Styles won't be archived</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwSwitchRow" id="block_fonts_switch">
+								<property name="title" translatable="yes">Block Fonts</property>
+								<property name="subtitle" translatable="yes">Fonts won't be archived</property>
+							</object>
+						</child>
+					</object>
+				</child>
+				<child>
+					<object class="AdwPreferencesGroup">
+						<property name="title" translatable="yes">ReplayWeb.page</property>
+						<child>
+							<object class="AdwSwitchRow" id="use_adblock_switch">
+								<property name="title" translatable="yes">Block Ads</property>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+	</template>
+</interface>

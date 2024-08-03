@@ -1,0 +1,12 @@
+./data/dev.geopjr.Archives.desktop.in
+./data/dev.geopjr.Archives.metainfo.xml.in
+./data/gresource.xml.in
+./src/Build.vala.in
+
+./data/ui/help-overlay.ui
+./data/ui/overviewtab.ui
+./data/ui/preferences.ui
+
+./src/Application.vala
+./src/Views/ArchivePage.vala
+./src/Widgets/OverviewTab.vala

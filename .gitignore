@@ -1,0 +1,17 @@
+_ignore
+build
+build.sh
+*~
+builddir
+*.snap
+.flatpak-builder
+*.exe
+subprojects/*
+!subprojects/libzim.wrap
+!subprojects/libzim-glib.wrap
+data/vendored
+vendored-build/
+update-bundle
+data/gresource.xml
+offline/
+_build

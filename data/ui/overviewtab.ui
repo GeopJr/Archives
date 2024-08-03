@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<requires lib="gtk" version="4.0" />
+	<template class="ArchivesWidgetsOverviewTab" parent="AdwBin">
+		<child>
+			<object class="AdwToastOverlay" id="toastoverlay">
+				<child>
+					<object class="AdwToolbarView" id="toolbarview">
+						<child type="top">
+							<object class="AdwHeaderBar">
+								<property name="centering-policy">loose</property>
+								<child type="start">
+									<object class="GtkButton" id="home_button">
+										<property name="tooltip_text" translatable="yes">Go Home</property>
+										<property name="visible">0</property>
+										<property name="icon-name">go-home-symbolic</property>
+										<signal name="clicked" handler="go_home" swapped="no" />
+									</object>
+								</child>
+								<child type="start">
+									<object class="GtkButton" id="archive_button">
+										<property name="visible">0</property>
+										<property name="sensitive">0</property>
+										<!-- translators: verb -->
+										<property name="tooltip-text" translatable="yes">Archive</property>
+										<property name="icon-name">archive-symbolic</property>
+										<signal name="clicked" handler="archive_page" swapped="no" />
+									</object>
+								</child>
+								<child type="title">
+									<object class="AdwWindowTitle" id="title_widget">
+										<property name="title" translatable="yes">Archives</property>
+									</object>
+								</child>
+								<child type="end">
+									<object class="GtkMenuButton" id="menu_btn">
+										<property name="icon-name">open-menu-symbolic</property>
+										<property name="menu-model">menu_button_model</property>
+										<property name="tooltip_text" translatable="yes">Menu</property>
+										<property name="primary">1</property>
+									</object>
+								</child>
+								<child type="end">
+									<object class="AdwTabButton" id="tab_button">
+										<property name="action-name">win.show-tabs</property>
+									</object>
+								</child>
+							</object>
+						</child>
+						<child type="bottom">
+							<object class="GtkBox">
+								<property name="orientation">horizontal</property>
+								<property name="spacing">6</property>
+								<property name="margin-start">6</property>
+								<property name="margin-end">6</property>
+								<property name="margin-top">6</property>
+								<property name="margin-bottom">6</property>
+								<child>
+									<object class="GtkBox">
+										<property name="orientation">horizontal</property>
+										<property name="spacing">0</property>
+										<style>
+											<class name="linked" />
+										</style>
+										<child>
+											<object class="GtkButton" id="back_button">
+												<property name="tooltip_text" translatable="yes">Back</property>
+												<property name="icon-name">go-previous-symbolic</property>
+											</object>
+										</child>
+										<child>
+											<object class="GtkButton" id="forward_button">
+												<property name="tooltip_text" translatable="yes">Forward</property>
+												<property name="icon-name">go-next-symbolic</property>
+											</object>
+										</child>
+									</object>
+								</child>
+								<child>
+									<object class="GtkSearchEntry" id="search_entry">
+										<property name="hexpand">1</property>
+										<property name="input-purpose">url</property>
+										<property name="input-hints">none</property>
+										<signal name="activate" handler="on_search_activate" swapped="no" />
+									</object>
+								</child>
+							</object>
+						</child>
+						<property name="content">
+							<object class="GtkStack" id="stack">
+								<child>
+									<object class="GtkStackPage">
+										<property name="name">home</property>
+										<property name="child">
+											<object class="AdwStatusPage" id="status_page">
+												<property name="title" translatable="yes">Archives</property>
+												<property name="description" translatable="yes">Create and view web archives</property>
+												<child>
+													<object class="GtkBox">
+														<property name="orientation">vertical</property>
+														<property name="spacing">8</property>
+														<property name="halign">center</property>
+														<child>
+															<object class="GtkButton">
+																<property name="label" translatable="yes">Archive a Website</property>
+																<signal name="clicked" handler="open_archive_view" swapped="no" />
+																<style>
+																	<class name="suggested-action" />
+																	<class name="pill" />
+																</style>
+															</object>
+														</child>
+														<child>
+															<object class="GtkButton">
+																<property name="label" translatable="yes">Open a HTML, WARC, SWF file</property>
+																<signal name="clicked" handler="on_open_file" swapped="no" />
+																<style>
+																	<class name="pill" />
+																</style>
+															</object>
+														</child>
+													</object>
+												</child>
+											</object>
+										</property>
+									</object>
+								</child>
+							</object>
+						</property>
+					</object>
+				</child>
+			</object>
+		</child>
+	</template>
+	<menu id="menu_button_model">
+		<section>
+			<item>
+				<attribute name="label" translatable="yes">Preferences</attribute>
+				<attribute name="action">app.open-preferences</attribute>
+			</item>
+			<item>
+				<attribute name="label" translatable="yes">Keyboard Shortcuts</attribute>
+				<attribute name="action">win.show-help-overlay</attribute>
+			</item>
+			<item>
+				<attribute name="label" translatable="yes">About Archives</attribute>
+				<attribute name="action">app.about</attribute>
+			</item>
+		</section>
+	</menu>
+</interface>

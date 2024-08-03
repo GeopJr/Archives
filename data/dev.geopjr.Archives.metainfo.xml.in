@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>dev.geopjr.Archives</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-only</project_license>
+  <name>Archives</name>
+  <summary>Create and view web archives</summary>
+  <description>
+    <p>
+      Every day, countless of websites go offline for good. High server costs, government censorship, venture capitalism are some of the threats, many of your favorite websites are facing.
+    </p>
+    <p>
+      Archives allows you to archive any website, including its assets, into a self-contained hybrid HTML/ZIP. These HTML files can be viewed in any browser (or in-app), be shared or be extracted like a regular ZIP file. Archives can additionally view WARC, WACZ, HAR and SWF files.
+    </p>
+  </description>
+  <provides>
+    <binary>dev.geopjr.Archives</binary>
+  </provides>
+  <launchable type="desktop-id">dev.geopjr.Archives.desktop</launchable>
+  <!-- developer_name tag deprecated with Appstream 1.0 -->
+  <developer_name translate="no">Evangelos "GeopJr" Paterakis</developer_name>
+  <developer id="dev.geopjr">
+    <name translate="no">Evangelos "GeopJr" Paterakis</name>
+  </developer>
+  <url type="homepage">https://archives.geopjr.dev/</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GeopJr/Archives/-/issues</url>
+  <url type="donation">https://geopjr.dev/donate</url>
+  <url type="vcs-browser">https://gitlab.gnome.org/GeopJr/Archives/</url>
+  <url type="contribute">https://gitlab.gnome.org/GeopJr/Archives#contributing</url>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://gitlab.gnome.org/GeopJr/Archives/-/raw/main/data/screenshots/screenshot-1.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://gitlab.gnome.org/GeopJr/Archives/-/raw/main/data/screenshots/screenshot-2.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://gitlab.gnome.org/GeopJr/Archives/-/raw/main/data/screenshots/screenshot-3.png</image>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <translation type="gettext">dev.geopjr.Archives</translation>
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+  <recommends>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>touch</control>
+  </recommends>
+  <releases>
+    <release version="0.1.0" date="2024-08-03">
+      <description translate="no">
+        <ul>
+          <li>Initial release</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <kudos>
+    <!--
+      GNOME Software kudos:
+      https://gitlab.gnome.org/GNOME/gnome-software/blob/master/doc/kudos.md
+    -->
+    <kudo>ModernToolkit</kudo>
+    <kudo>HiDpiIcon</kudo>
+  </kudos>
+  <branding>
+    <color type="primary" scheme_preference="light">#92CD8F</color>
+    <color type="primary" scheme_preference="dark">#6090b8</color>
+  </branding>
+</component>

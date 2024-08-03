@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="dev.geopjr.Archives" path="/dev/geopjr/Archives/" gettext-domain="dev.geopjr.Archives">
+    <key name="replaywebpage-adblock" type="b">
+      <default>true</default>
+    </key>
+    <key name="user-agent" type="s">
+      <default>''</default>
+    </key>
+    <key name="singlefile-compress-html" type="b">
+      <default>true</default>
+    </key>
+    <key name="singlefile-compress-css" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-insert-meta-csp" type="b">
+      <default>true</default>
+    </key>
+    <key name="singlefile-remove-hidden-elements" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-remove-unused-styles" type="b">
+      <default>true</default>
+    </key>
+    <key name="singlefile-remove-unused-fonts" type="b">
+      <default>true</default>
+    </key>
+    <key name="singlefile-remove-frames" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-display-infobar" type="b">
+      <default>true</default>
+    </key>
+    <key name="singlefile-include-infobar" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-save-deferred-images" type="b">
+      <default>true</default>
+    </key>
+    <key name="singlefile-block-videos" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-block-audios" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-block-scripts" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-block-images" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-block-styles" type="b">
+      <default>false</default>
+    </key>
+    <key name="singlefile-block-fonts" type="b">
+      <default>false</default>
+    </key>
+
+    <key name="window-w" type="i">
+      <default>600</default>
+    </key>
+    <key name="window-h" type="i">
+      <default>700</default>
+    </key>
+    <key name="window-maximized" type="b">
+      <default>false</default>
+    </key>
+  </schema>
+</schemalist>
