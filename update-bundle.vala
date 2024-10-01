@@ -3,7 +3,7 @@ const string PARENT = "./data/vendored";
 const string FILENAME_BUNDLE = "single-filez-bundle.js";
 const string FILENAME_CAPTURE = "single-filez-capture.js";
 const string SINGLEFILE_COMMIT_HASH = "2962d4f89accbb36aaaa1502022bb29715497566";
-const string RUFFLE_URL = "nightly-2024-07-31/ruffle-nightly-2024_07_31-web-selfhosted.zip";
+const string RUFFLE_URL = "nightly-2024-10-01/ruffle-nightly-2024_10_01-web-selfhosted.zip";
 const string[] SINGLEFILE_FILES = {
   "lib/single-file.js",
   "lib/single-file-bootstrap.js",
@@ -15,7 +15,7 @@ const string[] ALLOWED_TYPES = {
 	".cjs",
 	".mjs"
 };
-const string REPLAY_COMMIT_HASH = "022a35d1519c6c7903c23ce66486e0d5d2d2597d";
+const string REPLAY_COMMIT_HASH = "c24cafe21015da4e4c05c9f75c2b9991c2501849";
 const string[] REPLAY_FILES = {
 	"ui.js",
 	"sw.js",

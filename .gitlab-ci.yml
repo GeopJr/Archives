@@ -5,7 +5,7 @@ stages:
 variables:
   MANIFEST_PATH: "build-aux/dev.geopjr.Archives.Devel.json"
   FLATPAK_MODULE: "archives"
-  RUNTIME: "46"
+  RUNTIME: "47"
 
 flatpak:
   stage: build
