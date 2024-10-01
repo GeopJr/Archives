@@ -18,6 +18,7 @@ public class Archives.Dialogs.Preferences : Adw.PreferencesDialog {
 	[GtkChild] unowned Adw.SwitchRow block_styles_switch;
 	[GtkChild] unowned Adw.SwitchRow block_fonts_switch;
 	[GtkChild] unowned Adw.SwitchRow use_adblock_switch;
+	[GtkChild] unowned Adw.SwitchRow cache_switch;
 
 	~Preferences () {
 		debug ("Destroying Preferences");
@@ -46,5 +47,6 @@ public class Archives.Dialogs.Preferences : Adw.PreferencesDialog {
 		settings.bind ("singlefile-block-styles", block_styles_switch, "active", SettingsBindFlags.DEFAULT);
 		settings.bind ("singlefile-block-fonts", block_fonts_switch, "active", SettingsBindFlags.DEFAULT);
 		settings.bind ("user-agent", user_agent_entry, "text", SettingsBindFlags.DEFAULT);
+		settings.bind ("cache", cache_switch, "active", SettingsBindFlags.DEFAULT);
 	}
 }

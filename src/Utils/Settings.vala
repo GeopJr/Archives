@@ -18,6 +18,7 @@ public class Archives.Utils.Settings : GLib.Settings {
 	public bool singlefile_block_images { get; set; }
 	public bool singlefile_block_styles { get; set; }
 	public bool singlefile_block_fonts { get; set; }
+	public bool cache { get; set; }
 
 	public string to_single_file_js () {
 		return """
@@ -78,7 +79,8 @@ public class Archives.Utils.Settings : GLib.Settings {
 		"singlefile-block-scripts",
 		"singlefile-block-images",
 		"singlefile-block-styles",
-		"singlefile-block-fonts"
+		"singlefile-block-fonts",
+		"cache"
 	};
 
 	public Settings () {

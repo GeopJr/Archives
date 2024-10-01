@@ -29,7 +29,7 @@ public class Archives.Widgets.WebView : WebKit.WebView {
 			hardware_acceleration_policy = WebKit.HardwareAccelerationPolicy.NEVER
 		};
 
-		if (Archives.settings.user_agent != "") {
+		if (Archives.settings.user_agent != null && Archives.settings.user_agent != "") {
 			webkit_settings.set_user_agent (Archives.settings.user_agent);
 		} else {
 			webkit_settings.set_user_agent_with_application_details (Build.NAME, Build.VERSION);

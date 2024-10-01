@@ -43,6 +43,8 @@ public class Archives.Views.WebViewPage : Gtk.Box {
 		this.webview.bind_property ("uri", this, "subtitle", BindingFlags.SYNC_CREATE);
 		this.webview.bind_property ("estimated-load-progress", this, "progress", BindingFlags.SYNC_CREATE);
 		this.webview.load_changed.connect (on_load_changed);
+
+		this.webview.web_context.set_cache_model (WebKit.CacheModel.DOCUMENT_BROWSER);
 	}
 
 	protected virtual void on_load_changed (WebKit.LoadEvent load_event) {

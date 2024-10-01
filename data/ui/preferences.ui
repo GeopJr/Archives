@@ -21,6 +21,12 @@
 							</object>
 						</child>
 						<child>
+							<object class="AdwSwitchRow" id="cache_switch">
+								<property name="title" translatable="yes">Browser Cache</property>
+								<property name="subtitle" translatable="yes">It can reduce bandwidth usage but may display stale content</property>
+							</object>
+						</child>
+						<child>
 							<object class="AdwSwitchRow" id="compress_html_switch">
 								<property name="title" translatable="yes">Compress HTML</property>
 							</object>

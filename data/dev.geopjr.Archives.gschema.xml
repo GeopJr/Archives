@@ -7,6 +7,9 @@
     <key name="user-agent" type="s">
       <default>''</default>
     </key>
+    <key name="cache" type="b">
+      <default>false</default>
+    </key>
     <key name="singlefile-compress-html" type="b">
       <default>true</default>
     </key>
