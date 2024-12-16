@@ -1,0 +1,294 @@
+# Turkish translation for dev.geopjr.Archives.
+# Copyright (C) 2024 dev.geopjr.Archives's COPYRIGHT HOLDER
+# This file is distributed under the same license as the dev.geopjr.Archives package.
+#
+# Sabri Ünal <yakushabb@gmail.com>, 2022-2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dev.geopjr.Archives\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-16 20:38+0300\n"
+"PO-Revision-Date: 2024-12-16 20:48+0300\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
+"Language-Team: Turkish <takim@gnome.org.tr>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: data/dev.geopjr.Archives.desktop.in:4
+#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:32
+#: data/ui/overviewtab.ui:96 src/Widgets/OverviewTab.vala:22
+#: src/Widgets/OverviewTab.vala:75
+msgid "Archives"
+msgstr "Arşivler"
+
+#: data/dev.geopjr.Archives.desktop.in:5
+#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:97
+msgid "Create and view web archives"
+msgstr "Web arşivleri oluştur ve görüntüle"
+
+#: data/dev.geopjr.Archives.desktop.in:6
+msgid "Website Archiver"
+msgstr "Web Sitesi Arşivleyici"
+
+#: data/dev.geopjr.Archives.desktop.in:11
+msgid "archive;singlefile;replayweb;flash;web;"
+msgstr "archive;singlefile;replayweb;flash;web;arşiv;tek dosya;"
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:9
+msgid ""
+"Every day, countless of websites go offline for good. High server costs, "
+"government censorship, venture capitalism are some of the threats, many of "
+"your favorite websites are facing."
+msgstr ""
+"Her gün sayısız web sitesi temelli olarak çevrimdışı oluyor. Yüksek sunucu "
+"maliyetleri, devlet sansürü, girişimci kapitalizm, gözde web sitelerinizin "
+"çoğunun karşı karşıya olduğu tehditlerden bazıları."
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:12
+msgid ""
+"Archives allows you to archive any website, including its assets, into a "
+"self-contained hybrid HTML/ZIP. These HTML files can be viewed in any "
+"browser (or in-app), be shared or be extracted like a regular ZIP file. "
+"Archives can additionally view WARC, WACZ, HAR and SWF files."
+msgstr ""
+"Archives, varlıkları da dahil olmak üzere herhangi bir web sitesini kendi "
+"kendine yeten hibrit HTML/ZIP dosyası olarak arşivlemenizi sağlar. Bu HTML "
+"dosyaları herhangi bir tarayıcıda (ya da uygulama içinde) "
+"görüntülenebilir, paylaşılabilir ya da normal bir ZIP dosyası gibi "
+"çıkarılabilir. Archives ayrıca WARC, WACZ, HAR ve SWF dosyalarını da "
+"görüntüleyebilir."
+
+#: data/ui/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Genel"
+
+#: data/ui/help-overlay.ui:14
+msgid "Show Preferences"
+msgstr "Tercihleri Göster"
+
+#: data/ui/help-overlay.ui:20
+msgid "About"
+msgstr "Hakkında"
+
+#: data/ui/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Kısayolları Göster"
+
+#: data/ui/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Çık"
+
+#: data/ui/overviewtab.ui:14
+msgid "Go Home"
+msgstr "Ana Sayfaya Git"
+
+#. translators: verb
+#: data/ui/overviewtab.ui:25
+msgid "Archive"
+msgstr "Arşivle"
+
+#: data/ui/overviewtab.ui:39
+msgid "Menu"
+msgstr "Menü"
+
+#: data/ui/overviewtab.ui:67
+msgid "Back"
+msgstr "Engelle"
+
+#: data/ui/overviewtab.ui:73
+msgid "Forward"
+msgstr "İleri"
+
+#: data/ui/overviewtab.ui:105
+msgid "Archive a Website"
+msgstr "Web Sitesini Arşivle"
+
+#: data/ui/overviewtab.ui:115
+msgid "Open a HTML, WARC, SWF file"
+msgstr "HTML, WARC, SWF dosyası aç"
+
+#: data/ui/overviewtab.ui:138
+msgid "Preferences"
+msgstr "Tercihler"
+
+#: data/ui/overviewtab.ui:142
+msgid "Keyboard Shortcuts"
+msgstr "Klavye Kısayolları"
+
+#: data/ui/overviewtab.ui:146
+msgid "About Archives"
+msgstr "Arşivler Hakkında"
+
+#: data/ui/preferences.ui:12
+msgid "General"
+msgstr "Genel"
+
+#: data/ui/preferences.ui:15
+msgid "Archiving"
+msgstr "Arşivleme"
+
+#: data/ui/preferences.ui:19
+msgid "Custom User Agent"
+msgstr "Özel Kullanıcı Aracısı"
+
+#: data/ui/preferences.ui:25
+msgid "Compress HTML"
+msgstr "HTMLʼi Sıkıştır"
+
+#: data/ui/preferences.ui:30
+msgid "Compress CSS"
+msgstr "CSS sıkıştır"
+
+#: data/ui/preferences.ui:35
+msgid "Set Content Security Policy"
+msgstr "İçerik Güvenlik Politikasını Ayarla"
+
+#: data/ui/preferences.ui:36
+msgid "Prevent external sources from being loaded in the archives"
+msgstr "Harici kaynakların arşivlere yüklenmesini önle"
+
+#: data/ui/preferences.ui:41
+msgid "Remove Hidden Elements"
+msgstr "Gizli Ögeleri Kaldır"
+
+#: data/ui/preferences.ui:42
+msgid "Non-visible elements won't be archived"
+msgstr "Görünmeyen ögeler arşivlenmez"
+
+#: data/ui/preferences.ui:47
+msgid "Remove Unused Styles"
+msgstr "Kullanılmayan Biçemleri Kaldır"
+
+#: data/ui/preferences.ui:48
+msgid "Styles that do not match any element will be removed"
+msgstr "Herhangi bir ögeyle eşleşmeyen biçemler kaldırılacak"
+
+#: data/ui/preferences.ui:53
+msgid "Remove Unused Fonts"
+msgstr "Kullanılmayan Yazı Tiplerini Kaldır"
+
+#: data/ui/preferences.ui:58
+msgid "Remove Iframes"
+msgstr "Çerçeveleri Kaldır"
+
+#: data/ui/preferences.ui:63
+msgid "Display Infobar"
+msgstr "Bilgi Çubuğunu Göster"
+
+#: data/ui/preferences.ui:64
+msgid ""
+"If the browser has the SingleFile extension installed, the archived page "
+"will display the archive date at the top right"
+msgstr ""
+"Tarayıcıda SingleFile uzantısı yüklüyse, arşivlenen sayfanın sağ üst "
+"köşesinde arşiv tarihi gösterilir"
+
+#: data/ui/preferences.ui:69
+msgid "Embed Infobar"
+msgstr "Bilgi Çubuğunu Göm"
+
+#: data/ui/preferences.ui:70
+msgid ""
+"Embed the infobar in the page so it's visible even if the browser does not "
+"have the SingleFile extension installed"
+msgstr ""
+"Bilgi çubuğunu sayfaya göm, böylece tarayıcıda SingleFile uzantısı yüklü "
+"olmasa bile görünür olur"
+
+#: data/ui/preferences.ui:75
+msgid "Save Deferred Images"
+msgstr "Ertelenmiş Görüntüleri Kaydet"
+
+#: data/ui/preferences.ui:76
+msgid ""
+"Images that load only when they become visible through scrolling, will be "
+"archived"
+msgstr "Yalnızca kaydırma yoluyla görünür hale gelen görüntüler arşivlenecek"
+
+#: data/ui/preferences.ui:81
+msgid "Block Videos"
+msgstr "Videoları Engelle"
+
+#: data/ui/preferences.ui:82
+msgid "Videos won't be archived"
+msgstr "Videolar arşivlenmeyecek"
+
+#: data/ui/preferences.ui:87
+msgid "Block Audio Files"
+msgstr "Ses Dosyalarını Engelle"
+
+#: data/ui/preferences.ui:88
+msgid "Audio files won't be archived"
+msgstr "Ses dosyaları arşivlenmeyecek"
+
+#: data/ui/preferences.ui:93
+msgid "Block Scripts"
+msgstr "Betikleri Engelle"
+
+#: data/ui/preferences.ui:94
+msgid "Scripts won't be archived"
+msgstr "Betikler arşivlenmeyecek"
+
+#: data/ui/preferences.ui:99
+msgid "Block Images"
+msgstr "Görüntüleri Engelle"
+
+#: data/ui/preferences.ui:100
+msgid "Images won't be archived"
+msgstr "Görüntüler arşivlenmeyecek"
+
+#: data/ui/preferences.ui:105
+msgid "Block Styles"
+msgstr "Biçemleri Engelle"
+
+#: data/ui/preferences.ui:106
+msgid "Styles won't be archived"
+msgstr "Biçemler arşivlenmeyecek"
+
+#: data/ui/preferences.ui:111
+msgid "Block Fonts"
+msgstr "Yazı Tiplerini Engelle"
+
+#: data/ui/preferences.ui:112
+msgid "Fonts won't be archived"
+msgstr "Yazı tipleri arşivlenmeyecek"
+
+#: data/ui/preferences.ui:119
+msgid "ReplayWeb.page"
+msgstr "ReplayWeb.page"
+
+#: data/ui/preferences.ui:122
+msgid "Block Ads"
+msgstr "Reklamları Engelle"
+
+#. translators: Name <email@domain.com> or Name https://website.example
+#: src/Application.vala:162
+msgid "translator-credits"
+msgstr "Sabri Ünal <yakushabb@gmail.com>"
+
+#: src/Application.vala:164
+msgid "Donate"
+msgstr "Bağış Yap"
+
+#: src/Application.vala:168
+msgid "Libraries"
+msgstr "Kütüphaneler"
+
+#: src/Views/ArchivePage.vala:99
+msgid "Save Archive"
+msgstr "Arşiv Kaydet"
+
+#: src/Widgets/OverviewTab.vala:96
+msgid "All Supported Files"
+msgstr "Tüm Desteklenen Dosyalar"
+
+#: src/Widgets/OverviewTab.vala:107
+msgid "Open"
+msgstr "Aç"
