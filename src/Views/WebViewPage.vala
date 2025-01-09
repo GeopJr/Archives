@@ -12,7 +12,7 @@ public class Archives.Views.WebViewPage : Gtk.Box {
 
 		set {
 			progressbar.fraction = value;
-			progressbar.visible = value > 0 && value < 1;
+			if (value == 1) progressbar.fraction = 0;
 		}
 	}
 
@@ -27,9 +27,7 @@ public class Archives.Views.WebViewPage : Gtk.Box {
 		this.orientation = Gtk.Orientation.VERTICAL;
 		this.spacing = 0;
 
-		progressbar = new Gtk.ProgressBar () {
-			visible = false
-		};
+		progressbar = new Gtk.ProgressBar ();
 		progressbar.add_css_class ("osd");
 		this.append (progressbar);
 
