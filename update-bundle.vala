@@ -2,8 +2,8 @@ const string GRESOURCE = "./data/gresource.xml";
 const string PARENT = "./data/vendored";
 const string FILENAME_BUNDLE = "single-filez-bundle.js";
 const string FILENAME_CAPTURE = "single-filez-capture.js";
-const string SINGLEFILE_COMMIT_HASH = "2962d4f89accbb36aaaa1502022bb29715497566";
-const string RUFFLE_URL = "nightly-2024-10-01/ruffle-nightly-2024_10_01-web-selfhosted.zip";
+const string SINGLEFILE_COMMIT_HASH = "adba2dbe0d9360d7bdaae9fb9732ae298d00e1c3";
+const string RUFFLE_URL = "nightly-2025-01-07/ruffle-nightly-2025_01_07-web-selfhosted.zip";
 const string[] SINGLEFILE_FILES = {
   "lib/single-file.js",
   "lib/single-file-bootstrap.js",
@@ -15,7 +15,7 @@ const string[] ALLOWED_TYPES = {
 	".cjs",
 	".mjs"
 };
-const string REPLAY_COMMIT_HASH = "c24cafe21015da4e4c05c9f75c2b9991c2501849";
+const string REPLAY_COMMIT_HASH = "851d87e6dd8e18869dac9b647350ff3bf58241c3";
 const string[] REPLAY_FILES = {
 	"ui.js",
 	"sw.js",
@@ -34,7 +34,7 @@ enum Service {
 string get_gh_url (string file_name, Service service = Service.SINGLEFILE) {
 	switch (service) {
 		case Service.SINGLEFILE:
-			return @"https://raw.githubusercontent.com/gildas-lormeau/single-filez-cli/$SINGLEFILE_COMMIT_HASH/$file_name";
+			return @"https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/$SINGLEFILE_COMMIT_HASH/$file_name";
 		case Service.REPLAY:
 			return @"https://raw.githubusercontent.com/webrecorder/replayweb.page/$REPLAY_COMMIT_HASH/$file_name";
 		default:
