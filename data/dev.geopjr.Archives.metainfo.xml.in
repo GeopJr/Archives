@@ -49,6 +49,15 @@
     <control>touch</control>
   </recommends>
   <releases>
+    <release version="0.3.0" date="2025-1-10">
+      <description translate="no">
+        <ul>
+          <li>Bumped tools and dependencies - enjoy much better archiving using an up-to-date SingleFile version</li>
+          <li>Made progress bar always visible to avoid layout shifting</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.2.0" date="2024-10-01">
       <description translate="no">
         <ul>
