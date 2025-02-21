@@ -10,7 +10,7 @@
 
 # Description
 
-Archives allows you to archive any website, including its assets, into a self-contained hybrid HTML/ZIP. These HTML files can be viewed in any browser (or in-app), be shared or be extracted like a regular ZIP file. Archives can additionally view WARC, WACZ, HAR and SWF files.
+Archives allows you to archive any website, including its assets, into a self-contained hybrid HTML/ZIP. These HTML files can be viewed in any browser (or in-app), be shared or be extracted like a regular ZIP file. Archives can additionally view WARC, WACZ, HAR, ZIM and SWF files.
 
 The goal is to become a toolbox full of offline archival tools without depending on a huge number of external dependencies. Countless of these tools have been targeting the web as a platform, especially with the introduction of wasm and web extensions, making bundling them and running them in a stable and secure environment easy.
 

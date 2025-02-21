@@ -1,20 +1,10 @@
-public class Archives.Views.WebViewPage : Gtk.Box {
+public class Archives.Views.WebViewPage : Adw.Bin {
 	public string title { get; protected set; }
 	public string subtitle { get; protected set; }
 	public bool has_navigation_bar { get; protected set; default=false; }
 	public bool can_go_forward { get; private set; default=false; }
 	public bool can_go_back { get; private set; default=false; }
-
-	protected double progress {
-		get {
-			return progressbar.fraction;
-		}
-
-		set {
-			progressbar.fraction = value;
-			if (value == 1) progressbar.fraction = 0;
-		}
-	}
+	public double progress { get; set; default=0.0; }
 
 	protected Widgets.WebView webview { get; private set; }
 
@@ -22,20 +12,12 @@ public class Archives.Views.WebViewPage : Gtk.Box {
 		debug ("Destroying WebViewPage");
 	}
 
-	Gtk.ProgressBar progressbar;
 	construct {
-		this.orientation = Gtk.Orientation.VERTICAL;
-		this.spacing = 0;
-
-		progressbar = new Gtk.ProgressBar ();
-		progressbar.add_css_class ("osd");
-		this.append (progressbar);
-
 		this.webview = new Widgets.WebView () {
 			vexpand = true,
 			hexpand = true
 		};
-		this.append (this.webview);
+		this.child = this.webview;
 
 		this.webview.bind_property ("title", this, "title", BindingFlags.SYNC_CREATE);
 		this.webview.bind_property ("uri", this, "subtitle", BindingFlags.SYNC_CREATE);

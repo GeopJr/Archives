@@ -18,6 +18,10 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 		}
 	}
 
+	static construct {
+		typeof (Widgets.ProgressBin).ensure ();
+	}
+
 	public bool working { get; private set; default=false; }
 	public string title { get; protected set; default=_("Archives"); }
 	public string keyword { get; private set; default=""; }
@@ -34,6 +38,7 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 	[GtkChild] unowned Gtk.Button archive_button;
 	[GtkChild] unowned Gtk.Button home_button;
 	[GtkChild] unowned Adw.ToastOverlay toastoverlay;
+	[GtkChild] unowned Widgets.ProgressBin progress_bin;
 	construct {
 		app.bind_property ("overview-open", toolbarview, "reveal-top-bars", BindingFlags.SYNC_CREATE | GLib.BindingFlags.INVERT_BOOLEAN);
 		app.bind_property ("overview-open", this, "reveal-bottom-bar", BindingFlags.SYNC_CREATE | GLib.BindingFlags.INVERT_BOOLEAN);
@@ -144,6 +149,7 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 		if (content_page != null) stack.remove (content_page);
 
 		content_page = new Views.KiwixPage ();
+		content_page.bind_property ("progress", progress_bin, "progress", BindingFlags.SYNC_CREATE);
 		stack.add_named (content_page, "content");
 		stack.visible_child_name = "content";
 
@@ -195,6 +201,7 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 		if (content_page != null) stack.remove (content_page);
 
 		content_page = new Views.RufflePage (file_pos, ext);
+		content_page.bind_property ("progress", progress_bin, "progress", BindingFlags.SYNC_CREATE);
 		stack.add_named (content_page, "content");
 		stack.visible_child_name = "content";
 	}
@@ -203,6 +210,7 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 		if (content_page != null) stack.remove (content_page);
 
 		content_page = new Views.ReplayPage (file_pos, ext);
+		content_page.bind_property ("progress", progress_bin, "progress", BindingFlags.SYNC_CREATE);
 		stack.add_named (content_page, "content");
 		stack.visible_child_name = "content";
 	}
@@ -223,6 +231,7 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 
 		content_page.bind_property ("can-go-forward", forward_button, "sensitive", BindingFlags.SYNC_CREATE);
 		content_page.bind_property ("can-go-back", back_button, "sensitive", BindingFlags.SYNC_CREATE);
+		content_page.bind_property ("progress", progress_bin, "progress", BindingFlags.SYNC_CREATE);
 
 		forward_button.clicked.connect (content_page.go_forward);
 		back_button.clicked.connect (content_page.go_back);
@@ -253,6 +262,7 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 
 		content_page.bind_property ("can-go-forward", forward_button, "sensitive", BindingFlags.SYNC_CREATE);
 		content_page.bind_property ("can-go-back", back_button, "sensitive", BindingFlags.SYNC_CREATE);
+		content_page.bind_property ("progress", progress_bin, "progress", BindingFlags.SYNC_CREATE);
 
 		forward_button.clicked.connect (content_page.go_forward);
 		back_button.clicked.connect (content_page.go_back);

@@ -7,44 +7,48 @@
 				<child>
 					<object class="AdwToolbarView" id="toolbarview">
 						<child type="top">
-							<object class="AdwHeaderBar">
-								<property name="centering-policy">loose</property>
-								<child type="start">
-									<object class="GtkButton" id="home_button">
-										<property name="tooltip_text" translatable="yes">Go Home</property>
-										<property name="visible">0</property>
-										<property name="icon-name">go-home-symbolic</property>
-										<signal name="clicked" handler="go_home" swapped="no" />
+							<object class="ArchivesWidgetsProgressBin" id="progress_bin">
+								<property name="child">
+									<object class="AdwHeaderBar">
+										<property name="centering-policy">loose</property>
+										<child type="start">
+											<object class="GtkButton" id="home_button">
+												<property name="tooltip_text" translatable="yes">Go Home</property>
+												<property name="visible">0</property>
+												<property name="icon-name">go-home-symbolic</property>
+												<signal name="clicked" handler="go_home" swapped="no" />
+											</object>
+										</child>
+										<child type="start">
+											<object class="GtkButton" id="archive_button">
+												<property name="visible">0</property>
+												<property name="sensitive">0</property>
+												<!-- translators: verb -->
+												<property name="tooltip-text" translatable="yes">Archive</property>
+												<property name="icon-name">archive-symbolic</property>
+												<signal name="clicked" handler="archive_page" swapped="no" />
+											</object>
+										</child>
+										<child type="title">
+											<object class="AdwWindowTitle" id="title_widget">
+												<property name="title" translatable="yes">Archives</property>
+											</object>
+										</child>
+										<child type="end">
+											<object class="GtkMenuButton" id="menu_btn">
+												<property name="icon-name">open-menu-symbolic</property>
+												<property name="menu-model">menu_button_model</property>
+												<property name="tooltip_text" translatable="yes">Menu</property>
+												<property name="primary">1</property>
+											</object>
+										</child>
+										<child type="end">
+											<object class="AdwTabButton" id="tab_button">
+												<property name="action-name">win.show-tabs</property>
+											</object>
+										</child>
 									</object>
-								</child>
-								<child type="start">
-									<object class="GtkButton" id="archive_button">
-										<property name="visible">0</property>
-										<property name="sensitive">0</property>
-										<!-- translators: verb -->
-										<property name="tooltip-text" translatable="yes">Archive</property>
-										<property name="icon-name">archive-symbolic</property>
-										<signal name="clicked" handler="archive_page" swapped="no" />
-									</object>
-								</child>
-								<child type="title">
-									<object class="AdwWindowTitle" id="title_widget">
-										<property name="title" translatable="yes">Archives</property>
-									</object>
-								</child>
-								<child type="end">
-									<object class="GtkMenuButton" id="menu_btn">
-										<property name="icon-name">open-menu-symbolic</property>
-										<property name="menu-model">menu_button_model</property>
-										<property name="tooltip_text" translatable="yes">Menu</property>
-										<property name="primary">1</property>
-									</object>
-								</child>
-								<child type="end">
-									<object class="AdwTabButton" id="tab_button">
-										<property name="action-name">win.show-tabs</property>
-									</object>
-								</child>
+								</property>
 							</object>
 						</child>
 						<child type="bottom">
