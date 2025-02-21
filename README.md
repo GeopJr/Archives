@@ -53,6 +53,7 @@ The app is still in an early stage, there are more tools and settings planned bu
 - [SingleFile](https://github.com/gildas-lormeau/SingleFile) for website archiving
 - [ReplayWeb.page](https://github.com/webrecorder/replayweb.page) for viewing WARC, WACZ and HAR files
 - [Ruffle](https://ruffle.rs/) for viewing SWF files
+- [Kiwix JS](https://github.com/kiwix/kiwix-js) for viewing ZIM archives
 
 Archives wouldn't exist without these powerful tools, check them out!
 

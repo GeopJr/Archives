@@ -165,10 +165,12 @@ namespace Archives {
 			dialog.add_legal_section ("SingleFile", "© Gildas Lormeau", Gtk.License.AGPL_3_0, null);
 			dialog.add_legal_section ("ReplayWeb.page", "© Webrecorder Software", Gtk.License.AGPL_3_0, null);
 			dialog.add_legal_section ("Ruffle", "© Ruffle LLC", Gtk.License.MIT_X11, null);
+			dialog.add_legal_section ("Kiwix", "© Kiwix Project and contributors", Gtk.License.GPL_3_0, null);
 			dialog.add_credit_section (_("Libraries"), {
 				"SingleFile https://github.com/gildas-lormeau/SingleFile",
 				"ReplayWeb.page https://github.com/webrecorder/replayweb.page",
-				"Ruffle https://ruffle.rs/"
+				"Ruffle https://ruffle.rs/",
+				"Kiwix JS https://github.com/kiwix/kiwix-js",
 			});
 			dialog.present (this.main_window);
 
