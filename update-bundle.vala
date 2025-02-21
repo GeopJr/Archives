@@ -21,6 +21,12 @@ const string[] REPLAY_FILES = {
 	"sw.js",
 	"adblock/adblock.gz",
 };
+const string KIWIX_HASH = "7bd14bd3288eed8f0472bf4efc82f171ad315837";
+const string[] DISALLOWED_TYPES = {
+	".md",
+	".txt",
+	".map"
+};
 
 #if OFFLINE
 	const string OFFLINE_FOLDER = "./offline";
@@ -47,9 +53,7 @@ void main () {
 		message ("Offline mode");
 	#endif
 
-	try {
-		string[] to_add_to_gresource = {};
-
+	//  try {
 		message (@"Creating $PARENT…");
 		File file_parent = File.new_for_path (PARENT);
 		if (!file_parent.query_exists ()) file_parent.make_directory_with_parents ();
@@ -192,106 +196,16 @@ void main () {
 		if (dos.has_pending ()) dos.flush ();
 		message (@"Created $FILENAME_CAPTURE");
 
-		// In offline mode, outside tools are responsible
-		// for extracting Ruffle and ReplayWeb.page doesn't
-		// need any processing
-		#if OFFLINE
-			message (@"Moving Ruffle…");
-			File ruffle_vendored = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle"));
-			if (!ruffle_vendored.query_exists ()) ruffle_vendored.make_directory_with_parents ();
+		// Ruffle
+		string[] to_add_to_gresource;
+		process_ruffle (out to_add_to_gresource);
 
-			string ruffle_dir_path = GLib.Path.build_path (Path.DIR_SEPARATOR_S, OFFLINE_FOLDER, "ruffle");
-			Dir ruffle_dir = Dir.open (ruffle_dir_path, 0);
-			string? name = null;
-			while ((name = ruffle_dir.read_name ()) != null) {
-				string name_down = name.down ();
-				int index_of_dot = name_down.last_index_of_char ('.');
+		// ReplayWeb.page
+		process_replayweb ();
 
-				if (name_down.slice (index_of_dot, name_down.length) in ALLOWED_TYPES) {
-					if (name_down != "ruffle.js")
-						to_add_to_gresource += name;
-
-					ruffle_vendored = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle", name));
-					var ruffle_source = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, ruffle_dir_path, name));
-					ruffle_source.copy (ruffle_vendored, FileCopyFlags.OVERWRITE, null);
-				}
-			}
-			message (@"Moved Ruffle");
-		#else
-			// Ruffle
-			message ("Fetching Ruffle…");
-			string ruffle_location = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle.zip");
-			string ruffle_out = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle");
-
-			File ruffle_file = File.new_for_uri (@"https://github.com/ruffle-rs/ruffle/releases/download/$RUFFLE_URL");
-			File ruffle_zip = File.new_for_path (ruffle_location);
-			ruffle_file.copy (ruffle_zip, FileCopyFlags.OVERWRITE);
-			message ("Fetched Ruffle");
-
-			File ruffle_out_file = File.new_for_path (ruffle_out);
-			if (!ruffle_out_file.query_exists ()) ruffle_out_file.make_directory_with_parents ();
-
-			message ("Extracting ruffle.zip…");
-			Archive.Read archive = new Archive.Read ();
-			archive.support_format_zip ();
-
-			Archive.WriteDisk extractor = new Archive.WriteDisk ();
-			extractor.set_options (Archive.ExtractFlags.ACL | Archive.ExtractFlags.FFLAGS);
-			extractor.set_standard_lookup ();
-
-			if (archive.open_filename (ruffle_location, 10240) != Archive.Result.OK) {
-				critical ("Error opening %s: %s (%d)", ruffle_location, archive.error_string (), archive.errno ());
-				return;
-			}
-
-			string prev_dir = GLib.Environment.get_current_dir ();
-			Posix.chdir (ruffle_out);
-
-			unowned Archive.Entry entry;
-			Archive.Result last_result;
-			while ((last_result = archive.next_header (out entry)) == Archive.Result.OK) {
-				string entry_path = entry.pathname ();
-				int index_of_dot = entry_path.last_index_of_char ('.');
-				if (
-					index_of_dot == -1
-					|| !(entry_path.down ().slice (index_of_dot, entry_path.length) in ALLOWED_TYPES)
-					|| extractor.write_header (entry) != Archive.Result.OK
-				) continue;
-
-				if (entry_path != "ruffle.js")
-					to_add_to_gresource += entry_path;
-
-				unowned uint8[] buffer = null;
-				Archive.int64_t offset;
-				while (archive.read_data_block (out buffer, out offset) == Archive.Result.OK) {
-					if (extractor.write_data_block (buffer, offset) != Archive.Result.OK) {
-						break;
-					}
-				}
-			}
-
-			if (last_result != Archive.Result.EOF) {
-				critical ("Error: %s (%d)", archive.error_string (), archive.errno ());
-				return;
-			}
-
-			Posix.chdir (prev_dir);
-			File.new_for_path (ruffle_location).delete ();
-			message ("Extracted ruffle.zip");
-
-			// ReplayWeb.page
-			message ("Fetching ReplayWeb.page…");
-			foreach (string file_name in REPLAY_FILES) {
-				message (@"Fetching $file_name…");
-				File file_local = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, file_name));
-				GLib.DirUtils.create_with_parents (GLib.Path.get_dirname (file_local.get_path ()), 0775);
-
-				File file_remote = File.new_for_uri (get_gh_url (file_name, Service.REPLAY));
-				file_remote.copy (file_local, FileCopyFlags.OVERWRITE);
-				message (@"Fetched $file_name");
-			}
-			message ("Fetched ReplayWeb.page");
-		#endif
+		// Kiwix
+		string[] to_add_to_gresource_kiwix;
+		process_kiwix (out to_add_to_gresource_kiwix);
 
 		// Gresource
 		message ("Generating gresources…");
@@ -306,12 +220,277 @@ void main () {
 			gresource_snippet += @"<file alias=\"ruffle/$file_path\">vendored/ruffle/$file_path</file>\n";
 		}
 
+		string gresource_kiwix_snippet = "";
+		foreach (string file_path in to_add_to_gresource_kiwix) {
+			gresource_kiwix_snippet += @"<file alias=\"$file_path\">vendored/kiwix/$file_path</file>\n";
+		}
+
 		FileIOStream gresource_iostream = gresource_out.replace_readwrite (null, false, FileCreateFlags.NONE);
 		OutputStream gresource_ostream = gresource_iostream.output_stream;
 		DataOutputStream gresource_dostream = new DataOutputStream (gresource_ostream);
-		gresource_dostream.put_string (((string) contents).printf (gresource_snippet));
+		gresource_dostream.put_string (((string) contents).printf (gresource_snippet, gresource_kiwix_snippet));
 		message ("Generated gresources");
-	} catch (Error e) {
-		critical (e.message);
+	//  } catch (Error e) {
+	//  	critical (e.message);
+	//  }
+}
+
+void process_ruffle (out string[] to_add_to_gresource) throws GLib.Error {
+	string[] to_add_to_gresource_temp = {};
+
+	#if OFFLINE
+		message (@"Moving Ruffle…");
+		File ruffle_vendored = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle"));
+		if (!ruffle_vendored.query_exists ()) ruffle_vendored.make_directory_with_parents ();
+
+		string ruffle_dir_path = GLib.Path.build_path (Path.DIR_SEPARATOR_S, OFFLINE_FOLDER, "ruffle");
+		Dir ruffle_dir = Dir.open (ruffle_dir_path, 0);
+		string? name = null;
+		while ((name = ruffle_dir.read_name ()) != null) {
+			string name_down = name.down ();
+			int index_of_dot = name_down.last_index_of_char ('.');
+
+			if (name_down.slice (index_of_dot, name_down.length) in ALLOWED_TYPES) {
+				if (name_down != "ruffle.js")
+				to_add_to_gresource_temp += name;
+
+				ruffle_vendored = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle", name));
+				var ruffle_source = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, ruffle_dir_path, name));
+				ruffle_source.copy (ruffle_vendored, FileCopyFlags.OVERWRITE, null);
+			}
+		}
+		message (@"Moved Ruffle");
+	#else
+		message ("Fetching Ruffle…");
+		string ruffle_location = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle.zip");
+		string ruffle_out = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle");
+
+		File ruffle_file = File.new_for_uri (@"https://github.com/ruffle-rs/ruffle/releases/download/$RUFFLE_URL");
+		File ruffle_zip = File.new_for_path (ruffle_location);
+		ruffle_file.copy (ruffle_zip, FileCopyFlags.OVERWRITE);
+		message ("Fetched Ruffle");
+
+		File ruffle_out_file = File.new_for_path (ruffle_out);
+		if (!ruffle_out_file.query_exists ()) ruffle_out_file.make_directory_with_parents ();
+
+		message ("Extracting ruffle.zip…");
+		Archive.Read archive = new Archive.Read ();
+		archive.support_format_zip ();
+
+		Archive.WriteDisk extractor = new Archive.WriteDisk ();
+		extractor.set_options (Archive.ExtractFlags.ACL | Archive.ExtractFlags.FFLAGS);
+		extractor.set_standard_lookup ();
+
+		if (archive.open_filename (ruffle_location, 10240) != Archive.Result.OK) {
+			critical ("Error opening %s: %s (%d)", ruffle_location, archive.error_string (), archive.errno ());
+			return;
+		}
+
+		string prev_dir = GLib.Environment.get_current_dir ();
+		Posix.chdir (ruffle_out);
+
+		unowned Archive.Entry entry;
+		Archive.Result last_result;
+		while ((last_result = archive.next_header (out entry)) == Archive.Result.OK) {
+			string entry_path = entry.pathname ();
+			int index_of_dot = entry_path.last_index_of_char ('.');
+			if (
+				index_of_dot == -1
+				|| !(entry_path.down ().slice (index_of_dot, entry_path.length) in ALLOWED_TYPES)
+				|| extractor.write_header (entry) != Archive.Result.OK
+			) continue;
+
+			if (entry_path != "ruffle.js")
+				to_add_to_gresource_temp += entry_path;
+
+			unowned uint8[] buffer = null;
+			Archive.int64_t offset;
+			while (archive.read_data_block (out buffer, out offset) == Archive.Result.OK) {
+				if (extractor.write_data_block (buffer, offset) != Archive.Result.OK) {
+					break;
+				}
+			}
+		}
+
+		if (last_result != Archive.Result.EOF) {
+			critical ("Error: %s (%d)", archive.error_string (), archive.errno ());
+			return;
+		}
+
+		Posix.chdir (prev_dir);
+		File.new_for_path (ruffle_location).delete ();
+		message ("Extracted ruffle.zip");
+	#endif
+
+	to_add_to_gresource = to_add_to_gresource_temp;
+}
+
+void process_replayweb () throws GLib.Error {
+	#if !OFFLINE
+		message ("Fetching ReplayWeb.page…");
+		foreach (string file_name in REPLAY_FILES) {
+			message (@"Fetching $file_name…");
+			File file_local = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, file_name));
+			GLib.DirUtils.create_with_parents (GLib.Path.get_dirname (file_local.get_path ()), 0775);
+
+			File file_remote = File.new_for_uri (get_gh_url (file_name, Service.REPLAY));
+			file_remote.copy (file_local, FileCopyFlags.OVERWRITE);
+			message (@"Fetched $file_name");
+		}
+		message ("Fetched ReplayWeb.page");
+	#endif
+}
+
+void process_kiwix (out string[] to_add_to_gresource_kiwix) throws GLib.Error {
+	string[] to_add_to_gresource_kiwix_temp = {};
+
+	#if OFFLINE
+		message (@"Moving Kiwix…");
+		File kiwix_vendored = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "kiwix"));
+		if (!kiwix_vendored.query_exists ()) kiwix_vendored.make_directory_with_parents ();
+
+		string kiwix_dir_path = GLib.Path.build_path (Path.DIR_SEPARATOR_S, OFFLINE_FOLDER, "kiwix", @"kiwix-js-$KIWIX_HASH", "dist");
+		if (!File.new_for_path (kiwix_dir_path).query_exists ()) {
+			// Flatpak removes the annoying middle-folder
+			kiwix_dir_path = GLib.Path.build_path (Path.DIR_SEPARATOR_S, OFFLINE_FOLDER, "kiwix", "dist");
+		}
+
+		string [] files_temp;
+		copy_recursive (kiwix_dir_path, "", out files_temp);
+		foreach (string rec_f in files_temp) {
+			to_add_to_gresource_kiwix_temp += rec_f;
+		}
+
+		message (@"Moved kiwix");
+	#else
+		string kiwix_out = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "kiwix-temp");
+		string kiwix_location = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "kiwix.zip");
+
+		message ("Fetching Kiwix…");
+		File kiwix_file = File.new_for_uri (@"https://github.com/kiwix/kiwix-js/archive/$KIWIX_HASH.zip");
+		File kiwix_zip = File.new_for_path (kiwix_location);
+		kiwix_file.copy (kiwix_zip, FileCopyFlags.OVERWRITE);
+
+		File kiwix_out_file = File.new_for_path (kiwix_out);
+		if (!kiwix_out_file.query_exists ()) kiwix_out_file.make_directory_with_parents ();
+		message ("Fetched Kiwix");
+
+		message ("Extracting kiwix.zip…");
+		Archive.Read archive = new Archive.Read ();
+		archive.support_format_zip ();
+
+		Archive.WriteDisk extractor = new Archive.WriteDisk ();
+		extractor.set_options (Archive.ExtractFlags.ACL | Archive.ExtractFlags.FFLAGS);
+		extractor.set_standard_lookup ();
+
+		if (archive.open_filename (kiwix_location, 10240) != Archive.Result.OK) {
+			critical ("Error opening %s: %s (%d)", kiwix_location, archive.error_string (), archive.errno ());
+			return;
+		}
+
+		string prev_dir = GLib.Environment.get_current_dir ();
+		Posix.chdir (kiwix_out);
+
+		unowned Archive.Entry entry;
+		Archive.Result last_result;
+		while ((last_result = archive.next_header (out entry)) == Archive.Result.OK) {
+			string entry_path = entry.pathname ();
+			int index_of_dot = entry_path.last_index_of_char ('.');
+			if (
+				index_of_dot == -1
+				|| entry_path.down ().slice (index_of_dot, entry_path.length) in DISALLOWED_TYPES
+			) continue;
+
+			string[] path_items = entry_path.split (GLib.Path.DIR_SEPARATOR_S);
+			if (
+				path_items.length < 2
+				|| path_items[1] != "dist"
+				|| path_items[2] == "_locales"
+				|| path_items[2] == "package.json"
+				|| path_items[2].has_prefix ("manifest.")
+				|| extractor.write_header (entry) != Archive.Result.OK
+			) continue;
+
+			to_add_to_gresource_kiwix_temp += string.joinv (GLib.Path.DIR_SEPARATOR_S, path_items[2:path_items.length]);
+
+			unowned uint8[] buffer = null;
+			Archive.int64_t offset;
+			while (archive.read_data_block (out buffer, out offset) == Archive.Result.OK) {
+				if (extractor.write_data_block (buffer, offset) != Archive.Result.OK) {
+					break;
+				}
+			}
+		}
+
+		if (last_result != Archive.Result.EOF) {
+			critical ("Error: %s (%d)", archive.error_string (), archive.errno ());
+			return;
+		}
+
+		Posix.chdir (prev_dir);
+		File.new_for_path (kiwix_location).delete ();
+		message ("Extracted kiwix.zip");
+
+		string random_github_folder_for_no_reason = GLib.Path.build_path (Path.DIR_SEPARATOR_S, kiwix_out, @"kiwix-js-$KIWIX_HASH");
+		File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, random_github_folder_for_no_reason, "dist")).move (
+			File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, kiwix_out, "..", "kiwix")),
+			GLib.FileCopyFlags.OVERWRITE
+		);
+
+		File.new_for_path (random_github_folder_for_no_reason).delete ();
+		kiwix_out_file.delete ();
+	#endif
+
+	File file_to_fix = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "kiwix", "www", "index.html"));
+	uint8[] content;
+	file_to_fix.load_contents (null, out content, null);
+	content = ((string) content).replace ("<meta name=\"referrer\" content=\"none\">", "").data;
+	file_to_fix.replace_contents (content, null, false, FileCreateFlags.NONE, null);
+
+	to_add_to_gresource_kiwix = to_add_to_gresource_kiwix_temp;
+}
+
+public void copy_recursive (string kiwix_dir_path, string current_rel_vendored_dir, out string[] files) throws GLib.Error {
+	string[] files_temp = {};
+
+	Dir kiwix_dir = Dir.open (kiwix_dir_path, 0);
+	string? name = null;
+	while ((name = kiwix_dir.read_name ()) != null) {
+		string name_down = name.down ();
+		int index_of_dot = name_down.last_index_of_char ('.');
+
+		if (
+			!(name_down.slice (index_of_dot, name_down.length) in DISALLOWED_TYPES)
+			&& name_down != "_locales"
+			&& name_down != "package.json"
+			&& !name_down.has_prefix ("manifest.")
+		) {
+			string new_rel_path = GLib.Path.build_path (Path.DIR_SEPARATOR_S, current_rel_vendored_dir, name);
+			string vendor_path = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "kiwix", current_rel_vendored_dir);
+			string entry_path = GLib.Path.build_path (Path.DIR_SEPARATOR_S, kiwix_dir_path, name);
+			GLib.File entry = File.new_for_path (entry_path);
+			GLib.File kiwix_vendored = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, vendor_path, name));
+
+			GLib.FileType src_type = entry.query_file_type (GLib.FileQueryInfoFlags.NONE, null);
+  			if (src_type == GLib.FileType.DIRECTORY) {
+				if (!kiwix_vendored.query_exists ()) kiwix_vendored.make_directory_with_parents ();
+
+				string[] rec;
+				copy_recursive (
+					entry_path,
+					new_rel_path,
+					out rec
+				);
+
+				foreach (string rec_s in rec) {
+					files_temp += rec_s;
+				}
+			} else if (src_type == GLib.FileType.REGULAR) {
+				files_temp += new_rel_path;
+				entry.copy (kiwix_vendored, FileCopyFlags.OVERWRITE, null);
+			}
+		}
 	}
+
+	files = files_temp;
 }

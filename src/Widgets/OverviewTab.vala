@@ -97,7 +97,6 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 		};
 
 		filter.add_mime_type ("application/vnd.adobe.flash.movie");
-		//  filter.add_mime_type ("application/x-openzim");
 		filter.add_mime_type ("application/gzip");
 		filter.add_mime_type ("application/zip");
 		filter.add_mime_type ("text/html");
@@ -141,11 +140,20 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 		});
 	}
 
+	[GtkCallback] private void on_open_kiwix () {
+		if (content_page != null) stack.remove (content_page);
+
+		content_page = new Views.KiwixPage ();
+		stack.add_named (content_page, "content");
+		stack.visible_child_name = "content";
+
+		title_widget.title = "Kiwix";
+	}
+
 	enum OpenFileType {
 		SWF,
 		REPLAY,
 		HTML,
-		//  ZIM,
 		OTHER
 	}
 
@@ -160,8 +168,6 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 			case "application/vnd.adobe.flash.movie":
 				ext = ".swf";
 				return OpenFileType.SWF;
-			//  case "application/x-openzim":
-			//  	return OpenFileType.ZIM;
 			default:
 				int index_of_dot = basename.index_of_char ('.');
 				if (index_of_dot == -1) return OpenFileType.OTHER;

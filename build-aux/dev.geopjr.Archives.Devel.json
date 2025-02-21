@@ -84,6 +84,12 @@
                     "dest" : "data/vendored/adblock/",
                     "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/c24cafe21015da4e4c05c9f75c2b9991c2501849/adblock/adblock.gz",
                     "sha256" : "c341c54e88fe1159e72a345f33dfa1c45f85247bb7ce94ff6ab5ad68c51c231b"
+                },
+                {
+                    "type" : "archive",
+                    "dest" : "offline/kiwix",
+                    "url" : "https://github.com/kiwix/kiwix-js/archive/7bd14bd3288eed8f0472bf4efc82f171ad315837.zip",
+                    "sha256" : "c6e4df586ce1e6d21cc02f88afa674fe931b12cd08e9e1329ce8300c610bf548"
                 }
             ]
         }

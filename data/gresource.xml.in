@@ -25,4 +25,7 @@
     <file alias="ruffle/ruffle.js">vendored/ruffle/ruffle.js</file>
     %s
   </gresource>
+  <gresource prefix="/dev/geopjr/Archives/kiwix">
+    %s
+  </gresource>
 </gresources>
