@@ -87,6 +87,8 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 	}
 
 	private void on_visible_child_name_changed () {
+		this.progress_bin.progress = 0;
+
 		this.reveal_bottom_bar =
 		home_button.visible = stack.visible_child_name != "home";
 	}
