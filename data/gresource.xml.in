@@ -26,6 +26,8 @@
     %s
   </gresource>
   <gresource prefix="/dev/geopjr/Archives/kiwix">
+    <file alias="replayWorker.js">vendored/sw.js</file>
+    <file alias="www/service-worker.js">vendored/kiwix/service-worker.js</file>
     %s
   </gresource>
 </gresources>

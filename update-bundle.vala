@@ -53,7 +53,7 @@ void main () {
 		message ("Offline mode");
 	#endif
 
-	//  try {
+	try {
 		message (@"Creating $PARENT…");
 		File file_parent = File.new_for_path (PARENT);
 		if (!file_parent.query_exists ()) file_parent.make_directory_with_parents ();
@@ -230,9 +230,9 @@ void main () {
 		DataOutputStream gresource_dostream = new DataOutputStream (gresource_ostream);
 		gresource_dostream.put_string (((string) contents).printf (gresource_snippet, gresource_kiwix_snippet));
 		message ("Generated gresources");
-	//  } catch (Error e) {
-	//  	critical (e.message);
-	//  }
+	} catch (Error e) {
+		critical (e.message);
+	}
 }
 
 void process_ruffle (out string[] to_add_to_gresource) throws GLib.Error {
@@ -406,6 +406,7 @@ void process_kiwix (out string[] to_add_to_gresource_kiwix) throws GLib.Error {
 				path_items.length < 2
 				|| path_items[1] != "dist"
 				|| path_items[2] == "_locales"
+				|| path_items[2] == "replayWorker.js"
 				|| path_items[2] == "package.json"
 				|| path_items[2].has_prefix ("manifest.")
 				|| extractor.write_header (entry) != Archive.Result.OK
@@ -447,6 +448,20 @@ void process_kiwix (out string[] to_add_to_gresource_kiwix) throws GLib.Error {
 	content = ((string) content).replace ("<meta name=\"referrer\" content=\"none\">", "").data;
 	file_to_fix.replace_contents (content, null, false, FileCreateFlags.NONE, null);
 
+	file_to_fix = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "kiwix", "www", "js", "bundle.js"));
+	file_to_fix.load_contents (null, out content, null);
+	content = ((string) content).replace ("'serviceWorker' in navigator", "false").data;
+	file_to_fix.replace_contents (content, null, false, FileCreateFlags.NONE, null);
+
+	file_to_fix = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "kiwix", "www", "js", "init.js"));
+	file_to_fix.load_contents (null, out content, null);
+	content = ((string) content)
+		.replace ("params['contentInjectionMode'] =", "params['contentInjectionMode'] = 'jquery' ||")
+		.replace ("params['defaultModeChangeAlertDisplayed'] =", "params['defaultModeChangeAlertDisplayed'] = true ||")
+		.replace ("'serviceWorker' in navigator", "false")
+		.data;
+	file_to_fix.replace_contents (content, null, false, FileCreateFlags.NONE, null);
+
 	to_add_to_gresource_kiwix = to_add_to_gresource_kiwix_temp;
 }
 
@@ -462,6 +477,7 @@ public void copy_recursive (string kiwix_dir_path, string current_rel_vendored_d
 		if (
 			!(name_down.slice (index_of_dot, name_down.length) in DISALLOWED_TYPES)
 			&& name_down != "_locales"
+			&& name_down != "replayworker.js"
 			&& name_down != "package.json"
 			&& !name_down.has_prefix ("manifest.")
 		) {
