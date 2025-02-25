@@ -181,5 +181,9 @@ namespace Archives {
 				return GLib.Source.REMOVE;
 			});
 		}
+
+		public void show_link_selection_dialog (string[] selection_links) {
+			(new Views.ArchiveSelectionDialog (selection_links)).present (this.main_window);
+		}
 	}
 }

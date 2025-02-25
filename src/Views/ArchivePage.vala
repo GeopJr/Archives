@@ -9,12 +9,20 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 		remove_last_css_class ();
 	}
 
+	WebKit.ContextMenuItem as_cm;
 	construct {
-		this.webview.load_uri ("https://start.duckduckgo.com/?k5=1&kay=b&kpsb=-1&kbg=-1&kbd=-1&kp=-2&k1=-1&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kau=-1");
 		this.has_navigation_bar = true;
 		this.webview.notify["uri"].connect (on_uri_change);
 
+		var as_action = new GLib.SimpleAction ("archive-selection", null);
+		as_action.activate.connect (on_archive_selection);
+		as_cm= new WebKit.ContextMenuItem.from_gaction (as_action, _("Archive All Selected Links"), null);
+
 		this.webview.web_context.set_cache_model (settings.cache ? WebKit.CacheModel.WEB_BROWSER : WebKit.CacheModel.DOCUMENT_VIEWER);
+	}
+
+	public ArchivePage (string uri = "https://start.duckduckgo.com/?k5=1&kay=b&kpsb=-1&kbg=-1&kbd=-1&kp=-2&k1=-1&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kau=-1") {
+		this.webview.load_uri (uri);
 	}
 
 	private void remove_last_css_class () {
@@ -31,10 +39,14 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 		change_class (last_css_class, false);
 	}
 
+	public signal void loaded ();
 	protected override void on_load_changed (WebKit.LoadEvent load_event) {
 		base.on_load_changed (load_event);
 		this.can_archive = load_event == WebKit.LoadEvent.FINISHED;
-		if (load_event == WebKit.LoadEvent.FINISHED) bundle_loaded_for_url = false;
+		if (load_event == WebKit.LoadEvent.FINISHED) {
+			bundle_loaded_for_url = false;
+			loaded ();
+		}
 	}
 
 	public async void archive () {
@@ -133,5 +145,86 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 		this.progress = 0.0;
 		this.can_archive = true;
 		debug (@"Finished archiving $(this.webview.uri)");
+	}
+
+	protected override bool on_context_menu (WebKit.ContextMenu context_menu, WebKit.HitTestResult hit_test_result) {
+		if (hit_test_result.context_is_selection ()) {
+			context_menu.append (as_cm);
+		}
+
+		return base.on_context_menu (context_menu, hit_test_result);
+	}
+
+	private void on_archive_selection () {
+		// https://github.com/gildas-lormeau/SingleFile/blob/bad106638d82ea3a742f190ef3f4c350bac6ace0/src/ui/content/content-ui.js#L159C30-L195
+		string script = """
+			let selectionFound;
+			const links = [];
+			const selection = getSelection();
+			for (let indexRange = 0; indexRange < selection.rangeCount; indexRange++) {
+				let range = selection.getRangeAt(indexRange);
+				if (range && range.commonAncestorContainer) {
+					const treeWalker = document.createTreeWalker(range.commonAncestorContainer);
+					let rangeSelectionFound = false;
+					let finished = false;
+					while (!finished) {
+						if (rangeSelectionFound || treeWalker.currentNode == range.startContainer || treeWalker.currentNode == range.endContainer) {
+							rangeSelectionFound = true;
+							if (range.startContainer != range.endContainer || range.startOffset != range.endOffset) {
+								selectionFound = true;
+								if (treeWalker.currentNode.tagName == "A" && treeWalker.currentNode.href) {
+									links.push(treeWalker.currentNode.href.trim());
+								}
+							}
+						}
+						if (treeWalker.currentNode == range.endContainer) {
+							finished = true;
+						} else {
+							treeWalker.nextNode();
+						}
+					}
+					if (selectionFound && treeWalker.currentNode == range.endContainer && treeWalker.currentNode.querySelectorAll) {
+						treeWalker.currentNode.querySelectorAll("*").forEach(descendantElement => {
+							if (descendantElement.tagName == "A" && descendantElement.href) {
+								links.push(treeWalker.currentNode.href.trim());
+							}
+						});
+					}
+				}
+			}
+			return JSON.stringify(Array.from(new Set(links.filter (x => x && x.toLowerCase().startsWith("http")))));
+		""";
+		this.webview.call_async_javascript_function.begin (
+			script,
+			-1,
+			null,
+			null,
+			null,
+			null,
+			(obj, res) => {
+				string[] selection_links = {};
+				try {
+					Json.Parser parser = new Json.Parser ();
+					parser.load_from_data (this.webview.call_async_javascript_function.end (res).to_string ());
+
+					var arr = parser.get_root ().get_array ();
+					arr.foreach_element ((array, i, node) => {
+						string found_url = node.get_string ();
+						if (found_url != this.webview.uri)
+							selection_links += found_url;
+					});
+				} catch (Error e) {
+					string msg = _(@"Couldn't retrieve links from selection: $(e.message)");
+					critical (msg);
+					app.toast (msg, 5);
+				}
+
+				if (selection_links.length == 0) {
+					app.toast (_("No links found in selection."));
+				} else {
+					app.show_link_selection_dialog (selection_links);
+				}
+			}
+		);
 	}
 }

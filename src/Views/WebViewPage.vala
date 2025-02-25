@@ -24,6 +24,7 @@ public class Archives.Views.WebViewPage : Adw.Bin {
 		this.webview.bind_property ("estimated-load-progress", this, "progress", BindingFlags.SYNC_CREATE);
 		this.webview.load_changed.connect (on_load_changed);
 		this.webview.create.connect (on_create);
+		this.webview.context_menu.connect (on_context_menu);
 
 		this.webview.web_context.set_cache_model (WebKit.CacheModel.DOCUMENT_BROWSER);
 	}
@@ -93,5 +94,9 @@ public class Archives.Views.WebViewPage : Adw.Bin {
 	protected Gtk.Widget on_create (WebKit.NavigationAction navigation_action) {
 		Utils.Host.open_url (navigation_action.get_request ().get_uri ());
 		return (Gtk.Widget) null;
+	}
+
+	protected virtual bool on_context_menu (WebKit.ContextMenu context_menu, WebKit.HitTestResult hit_test_result) {
+		return false;
 	}
 }

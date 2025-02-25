@@ -1,5 +1,6 @@
 sources += files(
   'ArchivePage.vala',
+  'ArchiveSelectionDialog.vala',
   'HtmlPage.vala',
   'KiwixPage.vala',
   'PreferencesDialog.vala',
