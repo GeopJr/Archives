@@ -1,4 +1,4 @@
-public class Archives.Views.WebViewPage : Adw.Bin {
+public class Archives.Views.WebViewPage : Gtk.Box {
 	public string title { get; protected set; }
 	public string subtitle { get; protected set; }
 	public bool has_navigation_bar { get; protected set; default=false; }
@@ -13,11 +13,12 @@ public class Archives.Views.WebViewPage : Adw.Bin {
 	}
 
 	construct {
+		this.orientation = Gtk.Orientation.VERTICAL;
 		this.webview = new Widgets.WebView () {
 			vexpand = true,
 			hexpand = true
 		};
-		this.child = this.webview;
+		this.append (this.webview);
 
 		this.webview.bind_property ("title", this, "title", BindingFlags.SYNC_CREATE);
 		this.webview.bind_property ("uri", this, "subtitle", BindingFlags.SYNC_CREATE);
@@ -27,6 +28,31 @@ public class Archives.Views.WebViewPage : Adw.Bin {
 		this.webview.context_menu.connect (on_context_menu);
 
 		this.webview.web_context.set_cache_model (WebKit.CacheModel.DOCUMENT_BROWSER);
+	}
+
+	Widgets.FindBar? findbar = null;
+	public void add_findbar () {
+		findbar = new Widgets.FindBar (this.webview.get_find_controller ());
+		this.append (findbar);
+
+		GLib.ActionEntry[] action_entries = {
+			{"find", toggle_find}
+		};
+
+		var actions = new GLib.SimpleActionGroup ();
+		actions.add_action_entries (action_entries, this);
+		this.webview.insert_action_group ("webview", actions);
+
+		var shortcutscontroller = new Gtk.ShortcutController ();
+		shortcutscontroller.add_shortcut (new Gtk.Shortcut (
+			Gtk.ShortcutTrigger.parse_string ("<Ctrl>F"),
+			new Gtk.NamedAction ("webview.find")
+		));
+		this.webview.add_controller (shortcutscontroller);
+	}
+
+	private void toggle_find () {
+		findbar.toggle ();
 	}
 
 	protected virtual void on_load_changed (WebKit.LoadEvent load_event) {

@@ -19,6 +19,7 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 		as_cm= new WebKit.ContextMenuItem.from_gaction (as_action, _("Archive All Selected Links"), null);
 
 		this.webview.web_context.set_cache_model (settings.cache ? WebKit.CacheModel.WEB_BROWSER : WebKit.CacheModel.DOCUMENT_VIEWER);
+		this.add_findbar ();
 	}
 
 	public ArchivePage (string uri = "https://start.duckduckgo.com/?k5=1&kay=b&kpsb=-1&kbg=-1&kbd=-1&kp=-2&k1=-1&kak=-1&kax=-1&kaq=-1&kap=-1&kao=-1&kau=-1") {
