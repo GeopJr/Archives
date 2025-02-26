@@ -9,4 +9,6 @@
 
 ./src/Application.vala
 ./src/Views/ArchivePage.vala
+./src/Views/ArchiveSelectionDialog.vala
+./src/Widgets/FindBar.vala
 ./src/Widgets/OverviewTab.vala

@@ -2,8 +2,8 @@ const string GRESOURCE = "./data/gresource.xml";
 const string PARENT = "./data/vendored";
 const string FILENAME_BUNDLE = "single-filez-bundle.js";
 const string FILENAME_CAPTURE = "single-filez-capture.js";
-const string SINGLEFILE_COMMIT_HASH = "adba2dbe0d9360d7bdaae9fb9732ae298d00e1c3";
-const string RUFFLE_URL = "nightly-2025-01-07/ruffle-nightly-2025_01_07-web-selfhosted.zip";
+const string SINGLEFILE_COMMIT_HASH = "77cf1b325139b95a2ca64616b9dfd60be0971e14";
+const string RUFFLE_URL = "nightly-2025-02-26/ruffle-nightly-2025_02_26-web-selfhosted.zip";
 const string[] SINGLEFILE_FILES = {
   "lib/single-file.js",
   "lib/single-file-bootstrap.js",
@@ -15,7 +15,7 @@ const string[] ALLOWED_TYPES = {
 	".cjs",
 	".mjs"
 };
-const string REPLAY_COMMIT_HASH = "851d87e6dd8e18869dac9b647350ff3bf58241c3";
+const string REPLAY_COMMIT_HASH = "74e6abc30951bd8602f2ed059ac5b5dd9adba9db";
 const string[] REPLAY_FILES = {
 	"ui.js",
 	"sw.js",

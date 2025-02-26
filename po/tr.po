@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dev.geopjr.Archives\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-16 20:38+0300\n"
+"POT-Creation-Date: 2025-02-26 03:46+0200\n"
 "PO-Revision-Date: 2024-12-16 20:48+0300\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <takim@gnome.org.tr>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: data/dev.geopjr.Archives.desktop.in:4
-#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:32
-#: data/ui/overviewtab.ui:96 src/Widgets/OverviewTab.vala:22
-#: src/Widgets/OverviewTab.vala:75
+#: data/dev.geopjr.Archives.desktop.in:3
+#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:34
+#: data/ui/overviewtab.ui:100 src/Widgets/OverviewTab.vala:26
+#: src/Widgets/OverviewTab.vala:80
 msgid "Archives"
 msgstr "Arşivler"
 
-#: data/dev.geopjr.Archives.desktop.in:5
-#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:97
+#: data/dev.geopjr.Archives.desktop.in:4
+#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:101
 msgid "Create and view web archives"
 msgstr "Web arşivleri oluştur ve görüntüle"
 
-#: data/dev.geopjr.Archives.desktop.in:6
+#: data/dev.geopjr.Archives.desktop.in:5
 msgid "Website Archiver"
 msgstr "Web Sitesi Arşivleyici"
 
-#: data/dev.geopjr.Archives.desktop.in:11
+#: data/dev.geopjr.Archives.desktop.in:10
 msgid "archive;singlefile;replayweb;flash;web;"
 msgstr "archive;singlefile;replayweb;flash;web;arşiv;tek dosya;"
 
@@ -49,18 +49,18 @@ msgstr ""
 "çoğunun karşı karşıya olduğu tehditlerden bazıları."
 
 #: data/dev.geopjr.Archives.metainfo.xml.in:12
+#, fuzzy
 msgid ""
 "Archives allows you to archive any website, including its assets, into a "
 "self-contained hybrid HTML/ZIP. These HTML files can be viewed in any "
 "browser (or in-app), be shared or be extracted like a regular ZIP file. "
-"Archives can additionally view WARC, WACZ, HAR and SWF files."
+"Archives can additionally view WARC, WACZ, HAR, ZIM and SWF files."
 msgstr ""
 "Archives, varlıkları da dahil olmak üzere herhangi bir web sitesini kendi "
 "kendine yeten hibrit HTML/ZIP dosyası olarak arşivlemenizi sağlar. Bu HTML "
-"dosyaları herhangi bir tarayıcıda (ya da uygulama içinde) "
-"görüntülenebilir, paylaşılabilir ya da normal bir ZIP dosyası gibi "
-"çıkarılabilir. Archives ayrıca WARC, WACZ, HAR ve SWF dosyalarını da "
-"görüntüleyebilir."
+"dosyaları herhangi bir tarayıcıda (ya da uygulama içinde) görüntülenebilir, "
+"paylaşılabilir ya da normal bir ZIP dosyası gibi çıkarılabilir. Archives "
+"ayrıca WARC, WACZ, HAR ve SWF dosyalarını da görüntüleyebilir."
 
 #: data/ui/help-overlay.ui:11
 msgctxt "shortcut window"
@@ -85,44 +85,48 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Çık"
 
-#: data/ui/overviewtab.ui:14
+#: data/ui/overviewtab.ui:16
 msgid "Go Home"
 msgstr "Ana Sayfaya Git"
 
 #. translators: verb
-#: data/ui/overviewtab.ui:25
+#: data/ui/overviewtab.ui:27 src/Views/ArchiveSelectionDialog.vala:96
 msgid "Archive"
 msgstr "Arşivle"
 
-#: data/ui/overviewtab.ui:39
+#: data/ui/overviewtab.ui:41
 msgid "Menu"
 msgstr "Menü"
 
-#: data/ui/overviewtab.ui:67
+#: data/ui/overviewtab.ui:71
 msgid "Back"
 msgstr "Engelle"
 
-#: data/ui/overviewtab.ui:73
+#: data/ui/overviewtab.ui:77
 msgid "Forward"
 msgstr "İleri"
 
-#: data/ui/overviewtab.ui:105
+#: data/ui/overviewtab.ui:109
 msgid "Archive a Website"
 msgstr "Web Sitesini Arşivle"
 
-#: data/ui/overviewtab.ui:115
+#: data/ui/overviewtab.ui:119
+msgid "Open Kiwix"
+msgstr ""
+
+#: data/ui/overviewtab.ui:128
 msgid "Open a HTML, WARC, SWF file"
 msgstr "HTML, WARC, SWF dosyası aç"
 
-#: data/ui/overviewtab.ui:138
+#: data/ui/overviewtab.ui:151
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: data/ui/overviewtab.ui:142
+#: data/ui/overviewtab.ui:155
 msgid "Keyboard Shortcuts"
 msgstr "Klavye Kısayolları"
 
-#: data/ui/overviewtab.ui:146
+#: data/ui/overviewtab.ui:159
 msgid "About Archives"
 msgstr "Arşivler Hakkında"
 
@@ -139,50 +143,58 @@ msgid "Custom User Agent"
 msgstr "Özel Kullanıcı Aracısı"
 
 #: data/ui/preferences.ui:25
+msgid "Browser Cache"
+msgstr ""
+
+#: data/ui/preferences.ui:26
+msgid "It can reduce bandwidth usage but may display stale content"
+msgstr ""
+
+#: data/ui/preferences.ui:31
 msgid "Compress HTML"
 msgstr "HTMLʼi Sıkıştır"
 
-#: data/ui/preferences.ui:30
+#: data/ui/preferences.ui:36
 msgid "Compress CSS"
 msgstr "CSS sıkıştır"
 
-#: data/ui/preferences.ui:35
+#: data/ui/preferences.ui:41
 msgid "Set Content Security Policy"
 msgstr "İçerik Güvenlik Politikasını Ayarla"
 
-#: data/ui/preferences.ui:36
+#: data/ui/preferences.ui:42
 msgid "Prevent external sources from being loaded in the archives"
 msgstr "Harici kaynakların arşivlere yüklenmesini önle"
 
-#: data/ui/preferences.ui:41
+#: data/ui/preferences.ui:47
 msgid "Remove Hidden Elements"
 msgstr "Gizli Ögeleri Kaldır"
 
-#: data/ui/preferences.ui:42
+#: data/ui/preferences.ui:48
 msgid "Non-visible elements won't be archived"
 msgstr "Görünmeyen ögeler arşivlenmez"
 
-#: data/ui/preferences.ui:47
+#: data/ui/preferences.ui:53
 msgid "Remove Unused Styles"
 msgstr "Kullanılmayan Biçemleri Kaldır"
 
-#: data/ui/preferences.ui:48
+#: data/ui/preferences.ui:54
 msgid "Styles that do not match any element will be removed"
 msgstr "Herhangi bir ögeyle eşleşmeyen biçemler kaldırılacak"
 
-#: data/ui/preferences.ui:53
+#: data/ui/preferences.ui:59
 msgid "Remove Unused Fonts"
 msgstr "Kullanılmayan Yazı Tiplerini Kaldır"
 
-#: data/ui/preferences.ui:58
+#: data/ui/preferences.ui:64
 msgid "Remove Iframes"
 msgstr "Çerçeveleri Kaldır"
 
-#: data/ui/preferences.ui:63
+#: data/ui/preferences.ui:69
 msgid "Display Infobar"
 msgstr "Bilgi Çubuğunu Göster"
 
-#: data/ui/preferences.ui:64
+#: data/ui/preferences.ui:70
 msgid ""
 "If the browser has the SingleFile extension installed, the archived page "
 "will display the archive date at the top right"
@@ -190,11 +202,11 @@ msgstr ""
 "Tarayıcıda SingleFile uzantısı yüklüyse, arşivlenen sayfanın sağ üst "
 "köşesinde arşiv tarihi gösterilir"
 
-#: data/ui/preferences.ui:69
+#: data/ui/preferences.ui:75
 msgid "Embed Infobar"
 msgstr "Bilgi Çubuğunu Göm"
 
-#: data/ui/preferences.ui:70
+#: data/ui/preferences.ui:76
 msgid ""
 "Embed the infobar in the page so it's visible even if the browser does not "
 "have the SingleFile extension installed"
@@ -202,69 +214,69 @@ msgstr ""
 "Bilgi çubuğunu sayfaya göm, böylece tarayıcıda SingleFile uzantısı yüklü "
 "olmasa bile görünür olur"
 
-#: data/ui/preferences.ui:75
+#: data/ui/preferences.ui:81
 msgid "Save Deferred Images"
 msgstr "Ertelenmiş Görüntüleri Kaydet"
 
-#: data/ui/preferences.ui:76
+#: data/ui/preferences.ui:82
 msgid ""
 "Images that load only when they become visible through scrolling, will be "
 "archived"
 msgstr "Yalnızca kaydırma yoluyla görünür hale gelen görüntüler arşivlenecek"
 
-#: data/ui/preferences.ui:81
+#: data/ui/preferences.ui:87
 msgid "Block Videos"
 msgstr "Videoları Engelle"
 
-#: data/ui/preferences.ui:82
+#: data/ui/preferences.ui:88
 msgid "Videos won't be archived"
 msgstr "Videolar arşivlenmeyecek"
 
-#: data/ui/preferences.ui:87
+#: data/ui/preferences.ui:93
 msgid "Block Audio Files"
 msgstr "Ses Dosyalarını Engelle"
 
-#: data/ui/preferences.ui:88
+#: data/ui/preferences.ui:94
 msgid "Audio files won't be archived"
 msgstr "Ses dosyaları arşivlenmeyecek"
 
-#: data/ui/preferences.ui:93
+#: data/ui/preferences.ui:99
 msgid "Block Scripts"
 msgstr "Betikleri Engelle"
 
-#: data/ui/preferences.ui:94
+#: data/ui/preferences.ui:100
 msgid "Scripts won't be archived"
 msgstr "Betikler arşivlenmeyecek"
 
-#: data/ui/preferences.ui:99
+#: data/ui/preferences.ui:105
 msgid "Block Images"
 msgstr "Görüntüleri Engelle"
 
-#: data/ui/preferences.ui:100
+#: data/ui/preferences.ui:106
 msgid "Images won't be archived"
 msgstr "Görüntüler arşivlenmeyecek"
 
-#: data/ui/preferences.ui:105
+#: data/ui/preferences.ui:111
 msgid "Block Styles"
 msgstr "Biçemleri Engelle"
 
-#: data/ui/preferences.ui:106
+#: data/ui/preferences.ui:112
 msgid "Styles won't be archived"
 msgstr "Biçemler arşivlenmeyecek"
 
-#: data/ui/preferences.ui:111
+#: data/ui/preferences.ui:117
 msgid "Block Fonts"
 msgstr "Yazı Tiplerini Engelle"
 
-#: data/ui/preferences.ui:112
+#: data/ui/preferences.ui:118
 msgid "Fonts won't be archived"
 msgstr "Yazı tipleri arşivlenmeyecek"
 
-#: data/ui/preferences.ui:119
+#: data/ui/preferences.ui:125
 msgid "ReplayWeb.page"
 msgstr "ReplayWeb.page"
 
-#: data/ui/preferences.ui:122
+#: data/ui/preferences.ui:128
 msgid "Block Ads"
 msgstr "Reklamları Engelle"
 
@@ -277,18 +289,56 @@ msgstr "Sabri Ünal <yakushabb@gmail.com>"
 msgid "Donate"
 msgstr "Bağış Yap"
 
-#: src/Application.vala:168
+#: src/Application.vala:169
 msgid "Libraries"
 msgstr "Kütüphaneler"
 
-#: src/Views/ArchivePage.vala:99
+#: src/Views/ArchivePage.vala:21
+msgid "Archive All Selected Links"
+msgstr ""
+
+#: src/Views/ArchivePage.vala:25
+#, fuzzy
+msgid "Archive All Links"
+msgstr "Arşivler"
+
+#: src/Views/ArchivePage.vala:123
 msgid "Save Archive"
 msgstr "Arşiv Kaydet"
 
-#: src/Widgets/OverviewTab.vala:96
+#: src/Views/ArchivePage.vala:166
+#, fuzzy
+msgid "Archive Link"
+msgstr "Arşivleme"
+
+#: src/Views/ArchivePage.vala:212 src/Views/ArchivePage.vala:291
+msgid "No links found in selection."
+msgstr ""
+
+#: src/Views/ArchiveSelectionDialog.vala:68
+msgid "Archive Selected Links"
+msgstr ""
+
+#: src/Views/ArchiveSelectionDialog.vala:94
+msgid "Cancel"
+msgstr ""
+
+#: src/Widgets/FindBar.vala:11
+msgid "Type to search…"
+msgstr ""
+
+#: src/Widgets/FindBar.vala:24
+msgid "Find previous occurrence of the search string"
+msgstr ""
+
+#: src/Widgets/FindBar.vala:32
+msgid "Find next occurrence of the search string"
+msgstr ""
+
+#: src/Widgets/OverviewTab.vala:103
 msgid "All Supported Files"
 msgstr "Tüm Desteklenen Dosyalar"
 
-#: src/Widgets/OverviewTab.vala:107
+#: src/Widgets/OverviewTab.vala:113
 msgid "Open"
 msgstr "Aç"

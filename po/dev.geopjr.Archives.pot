@@ -8,32 +8,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-03 19:17+0300\n"
+"POT-Creation-Date: 2025-02-26 03:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/dev.geopjr.Archives.desktop.in:4
-#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:32
-#: data/ui/overviewtab.ui:96 src/Widgets/OverviewTab.vala:22
-#: src/Widgets/OverviewTab.vala:75
+#: data/dev.geopjr.Archives.desktop.in:3
+#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:34
+#: data/ui/overviewtab.ui:100 src/Widgets/OverviewTab.vala:26
+#: src/Widgets/OverviewTab.vala:80
 msgid "Archives"
 msgstr ""
 
-#: data/dev.geopjr.Archives.desktop.in:5
-#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:97
+#: data/dev.geopjr.Archives.desktop.in:4
+#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:101
 msgid "Create and view web archives"
 msgstr ""
 
-#: data/dev.geopjr.Archives.desktop.in:6
+#: data/dev.geopjr.Archives.desktop.in:5
 msgid "Website Archiver"
 msgstr ""
 
-#: data/dev.geopjr.Archives.desktop.in:11
+#: data/dev.geopjr.Archives.desktop.in:10
 msgid "archive;singlefile;replayweb;flash;web;"
 msgstr ""
 
@@ -49,7 +49,7 @@ msgid ""
 "Archives allows you to archive any website, including its assets, into a "
 "self-contained hybrid HTML/ZIP. These HTML files can be viewed in any "
 "browser (or in-app), be shared or be extracted like a regular ZIP file. "
-"Archives can additionally view WARC, WACZ, HAR and SWF files."
+"Archives can additionally view WARC, WACZ, HAR, ZIM and SWF files."
 msgstr ""
 
 #: data/ui/help-overlay.ui:11
@@ -75,44 +75,48 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
-#: data/ui/overviewtab.ui:14
+#: data/ui/overviewtab.ui:16
 msgid "Go Home"
 msgstr ""
 
 #. translators: verb
-#: data/ui/overviewtab.ui:25
+#: data/ui/overviewtab.ui:27 src/Views/ArchiveSelectionDialog.vala:96
 msgid "Archive"
 msgstr ""
 
-#: data/ui/overviewtab.ui:39
+#: data/ui/overviewtab.ui:41
 msgid "Menu"
 msgstr ""
 
-#: data/ui/overviewtab.ui:67
+#: data/ui/overviewtab.ui:71
 msgid "Back"
 msgstr ""
 
-#: data/ui/overviewtab.ui:73
+#: data/ui/overviewtab.ui:77
 msgid "Forward"
 msgstr ""
 
-#: data/ui/overviewtab.ui:105
+#: data/ui/overviewtab.ui:109
 msgid "Archive a Website"
 msgstr ""
 
-#: data/ui/overviewtab.ui:115
+#: data/ui/overviewtab.ui:119
+msgid "Open Kiwix"
+msgstr ""
+
+#: data/ui/overviewtab.ui:128
 msgid "Open a HTML, WARC, SWF file"
 msgstr ""
 
-#: data/ui/overviewtab.ui:138
+#: data/ui/overviewtab.ui:151
 msgid "Preferences"
 msgstr ""
 
-#: data/ui/overviewtab.ui:142
+#: data/ui/overviewtab.ui:155
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: data/ui/overviewtab.ui:146
+#: data/ui/overviewtab.ui:159
 msgid "About Archives"
 msgstr ""
 
@@ -129,128 +133,136 @@ msgid "Custom User Agent"
 msgstr ""
 
 #: data/ui/preferences.ui:25
+msgid "Browser Cache"
+msgstr ""
+
+#: data/ui/preferences.ui:26
+msgid "It can reduce bandwidth usage but may display stale content"
+msgstr ""
+
+#: data/ui/preferences.ui:31
 msgid "Compress HTML"
 msgstr ""
 
-#: data/ui/preferences.ui:30
+#: data/ui/preferences.ui:36
 msgid "Compress CSS"
 msgstr ""
 
-#: data/ui/preferences.ui:35
+#: data/ui/preferences.ui:41
 msgid "Set Content Security Policy"
 msgstr ""
 
-#: data/ui/preferences.ui:36
+#: data/ui/preferences.ui:42
 msgid "Prevent external sources from being loaded in the archives"
 msgstr ""
 
-#: data/ui/preferences.ui:41
+#: data/ui/preferences.ui:47
 msgid "Remove Hidden Elements"
 msgstr ""
 
-#: data/ui/preferences.ui:42
+#: data/ui/preferences.ui:48
 msgid "Non-visible elements won't be archived"
 msgstr ""
 
-#: data/ui/preferences.ui:47
+#: data/ui/preferences.ui:53
 msgid "Remove Unused Styles"
 msgstr ""
 
-#: data/ui/preferences.ui:48
+#: data/ui/preferences.ui:54
 msgid "Styles that do not match any element will be removed"
 msgstr ""
 
-#: data/ui/preferences.ui:53
+#: data/ui/preferences.ui:59
 msgid "Remove Unused Fonts"
 msgstr ""
 
-#: data/ui/preferences.ui:58
+#: data/ui/preferences.ui:64
 msgid "Remove Iframes"
 msgstr ""
 
-#: data/ui/preferences.ui:63
+#: data/ui/preferences.ui:69
 msgid "Display Infobar"
 msgstr ""
 
-#: data/ui/preferences.ui:64
+#: data/ui/preferences.ui:70
 msgid ""
 "If the browser has the SingleFile extension installed, the archived page "
 "will display the archive date at the top right"
 msgstr ""
 
-#: data/ui/preferences.ui:69
+#: data/ui/preferences.ui:75
 msgid "Embed Infobar"
 msgstr ""
 
-#: data/ui/preferences.ui:70
+#: data/ui/preferences.ui:76
 msgid ""
 "Embed the infobar in the page so it's visible even if the browser does not "
 "have the SingleFile extension installed"
 msgstr ""
 
-#: data/ui/preferences.ui:75
+#: data/ui/preferences.ui:81
 msgid "Save Deferred Images"
 msgstr ""
 
-#: data/ui/preferences.ui:76
+#: data/ui/preferences.ui:82
 msgid ""
 "Images that load only when they become visible through scrolling, will be "
 "archived"
 msgstr ""
 
-#: data/ui/preferences.ui:81
+#: data/ui/preferences.ui:87
 msgid "Block Videos"
 msgstr ""
 
-#: data/ui/preferences.ui:82
+#: data/ui/preferences.ui:88
 msgid "Videos won't be archived"
 msgstr ""
 
-#: data/ui/preferences.ui:87
+#: data/ui/preferences.ui:93
 msgid "Block Audio Files"
 msgstr ""
 
-#: data/ui/preferences.ui:88
+#: data/ui/preferences.ui:94
 msgid "Audio files won't be archived"
 msgstr ""
 
-#: data/ui/preferences.ui:93
+#: data/ui/preferences.ui:99
 msgid "Block Scripts"
 msgstr ""
 
-#: data/ui/preferences.ui:94
+#: data/ui/preferences.ui:100
 msgid "Scripts won't be archived"
 msgstr ""
 
-#: data/ui/preferences.ui:99
+#: data/ui/preferences.ui:105
 msgid "Block Images"
 msgstr ""
 
-#: data/ui/preferences.ui:100
+#: data/ui/preferences.ui:106
 msgid "Images won't be archived"
 msgstr ""
 
-#: data/ui/preferences.ui:105
+#: data/ui/preferences.ui:111
 msgid "Block Styles"
 msgstr ""
 
-#: data/ui/preferences.ui:106
+#: data/ui/preferences.ui:112
 msgid "Styles won't be archived"
 msgstr ""
 
-#: data/ui/preferences.ui:111
+#: data/ui/preferences.ui:117
 msgid "Block Fonts"
 msgstr ""
 
-#: data/ui/preferences.ui:112
+#: data/ui/preferences.ui:118
 msgid "Fonts won't be archived"
 msgstr ""
 
-#: data/ui/preferences.ui:119
+#: data/ui/preferences.ui:125
 msgid "ReplayWeb.page"
 msgstr ""
 
-#: data/ui/preferences.ui:122
+#: data/ui/preferences.ui:128
 msgid "Block Ads"
 msgstr ""
 
@@ -263,18 +275,54 @@ msgstr ""
 msgid "Donate"
 msgstr ""
 
-#: src/Application.vala:168
+#: src/Application.vala:169
 msgid "Libraries"
 msgstr ""
 
-#: src/Views/ArchivePage.vala:99
+#: src/Views/ArchivePage.vala:21
+msgid "Archive All Selected Links"
+msgstr ""
+
+#: src/Views/ArchivePage.vala:25
+msgid "Archive All Links"
+msgstr ""
+
+#: src/Views/ArchivePage.vala:123
 msgid "Save Archive"
 msgstr ""
 
-#: src/Widgets/OverviewTab.vala:96
+#: src/Views/ArchivePage.vala:166
+msgid "Archive Link"
+msgstr ""
+
+#: src/Views/ArchivePage.vala:212 src/Views/ArchivePage.vala:291
+msgid "No links found in selection."
+msgstr ""
+
+#: src/Views/ArchiveSelectionDialog.vala:68
+msgid "Archive Selected Links"
+msgstr ""
+
+#: src/Views/ArchiveSelectionDialog.vala:94
+msgid "Cancel"
+msgstr ""
+
+#: src/Widgets/FindBar.vala:11
+msgid "Type to search…"
+msgstr ""
+
+#: src/Widgets/FindBar.vala:24
+msgid "Find previous occurrence of the search string"
+msgstr ""
+
+#: src/Widgets/FindBar.vala:32
+msgid "Find next occurrence of the search string"
+msgstr ""
+
+#: src/Widgets/OverviewTab.vala:103
 msgid "All Supported Files"
 msgstr ""
 
-#: src/Widgets/OverviewTab.vala:107
+#: src/Widgets/OverviewTab.vala:113
 msgid "Open"
 msgstr ""

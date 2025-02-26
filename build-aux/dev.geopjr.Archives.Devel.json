@@ -40,50 +40,50 @@
                 {
                     "type" : "archive",
                     "dest" : "offline/ruffle/",
-                    "url" : "https://github.com/ruffle-rs/ruffle/releases/download/nightly-2024-10-01/ruffle-nightly-2024_10_01-web-selfhosted.zip",
-                    "sha256" : "555981528e3425d97c6f2d3e39078b63756741afe2d5c903d82684938c4173e4"
+                    "url" : "https://github.com/ruffle-rs/ruffle/releases/download/nightly-2025-02-26/ruffle-nightly-2025_02_26-web-selfhosted.zip",
+                    "sha256" : "1381aeddc55a372ac374919dd498ce98be34d8450d0c045636f73974fff67a22"
                 },
                 {
                     "type" : "file",
                     "dest" : "offline/",
-                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/single-filez-cli/2962d4f89accbb36aaaa1502022bb29715497566/lib/single-file.js",
-                    "sha256" : "4d022d720d329fca4eca6250b242626038a09c655210a3ec4f44680cc6970930"
+                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/77cf1b325139b95a2ca64616b9dfd60be0971e14/lib/single-file.js",
+                    "sha256" : "a0678bf9286f44e9cba5a5d84a6fb1ff8d225f8b9c78d262bd09d5b0cae3aa1e"
                 },
                 {
                     "type" : "file",
                     "dest" : "offline/",
-                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/single-filez-cli/2962d4f89accbb36aaaa1502022bb29715497566/lib/single-file-bootstrap.js",
-                    "sha256" : "b48fafbc039395732021a2f6f6ec6341a89fe2c0da4688f8fe0f7443e135c973"
+                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/77cf1b325139b95a2ca64616b9dfd60be0971e14/lib/single-file-bootstrap.js",
+                    "sha256" : "139eb576fbd4eb411099151ed9d6edcb9bce79e0a0d4f8c9f104c31cc0013e3f"
                 },
                 {
                     "type" : "file",
                     "dest" : "offline/",
-                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/single-filez-cli/2962d4f89accbb36aaaa1502022bb29715497566/lib/single-file-hooks-frames.js",
-                    "sha256" : "b920e644e5ce901682979a8d6d5fe29fd03e0c09f4ef883db19c3749dea71af3"
+                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/77cf1b325139b95a2ca64616b9dfd60be0971e14/lib/single-file-hooks-frames.js",
+                    "sha256" : "4c34e85dafb9bc3f5b29c1bd4b613f041953f83b411127d3773e907f28565375"
                 },
                 {
                     "type" : "file",
                     "dest" : "offline/",
-                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/single-filez-cli/2962d4f89accbb36aaaa1502022bb29715497566/lib/single-file-zip.min.js",
-                    "sha256" : "d29f43d946f0cfd71f6a472938a9d392116a4bb275435001c248732687bf39e6"
+                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/77cf1b325139b95a2ca64616b9dfd60be0971e14/lib/single-file-zip.min.js",
+                    "sha256" : "1418380d6a57c9ee68888374ed5da12b3fabb2df4e2815825143248ce3d93a5c"
                 },
                 {
                     "type" : "file",
                     "dest" : "data/vendored/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/c24cafe21015da4e4c05c9f75c2b9991c2501849/ui.js",
-                    "sha256" : "a9f078a5667d65d6bba639f48f0d1fa59713a5c928bc48c5f1d97aabba50f940"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/74e6abc30951bd8602f2ed059ac5b5dd9adba9db/ui.js",
+                    "sha256" : "c9e06bf15dc5df575b5fb95eae0e271278aa93cac03aac12acf9016473f40e8d"
                 },
                 {
                     "type" : "file",
                     "dest" : "data/vendored/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/c24cafe21015da4e4c05c9f75c2b9991c2501849/sw.js",
-                    "sha256" : "0ca31e3a561e23eaa880e501808e777424b2c51001d5074fe889d00d93f84047"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/74e6abc30951bd8602f2ed059ac5b5dd9adba9db/sw.js",
+                    "sha256" : "07780edd3bbff9bb5bd2002141edeaa5c63b950ff8d81a3a0b2377b28f16a13e"
                 },
                 {
                     "type" : "file",
                     "dest" : "data/vendored/adblock/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/c24cafe21015da4e4c05c9f75c2b9991c2501849/adblock/adblock.gz",
-                    "sha256" : "c341c54e88fe1159e72a345f33dfa1c45f85247bb7ce94ff6ab5ad68c51c231b"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/74e6abc30951bd8602f2ed059ac5b5dd9adba9db/adblock/adblock.gz",
+                    "sha256" : "e360962437897b10a1a0776ccc137f7b79b3d83792b401fce06d2015c5a4a960"
                 },
                 {
                     "type" : "archive",

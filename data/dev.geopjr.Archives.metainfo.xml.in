@@ -10,7 +10,7 @@
       Every day, countless of websites go offline for good. High server costs, government censorship, venture capitalism are some of the threats, many of your favorite websites are facing.
     </p>
     <p>
-      Archives allows you to archive any website, including its assets, into a self-contained hybrid HTML/ZIP. These HTML files can be viewed in any browser (or in-app), be shared or be extracted like a regular ZIP file. Archives can additionally view WARC, WACZ, HAR and SWF files.
+      Archives allows you to archive any website, including its assets, into a self-contained hybrid HTML/ZIP. These HTML files can be viewed in any browser (or in-app), be shared or be extracted like a regular ZIP file. Archives can additionally view WARC, WACZ, HAR, ZIM and SWF files.
     </p>
   </description>
   <provides>
@@ -49,7 +49,19 @@
     <control>touch</control>
   </recommends>
   <releases>
-    <release version="0.3.0" date="2025-1-10">
+    <release version="0.4.0" date="2025-02-26">
+      <description translate="no">
+        <ul>
+          <li>Added the ability to archive all links, all links in text selection and the right clicked link</li>
+          <li>Added the ability to find-in-page</li>
+          <li>Added Kiwix support - you can now open ZIM files</li>
+          <li>Redesigned progress bars as to be on par with Tuba</li>
+          <li>Bumped tools and dependencies</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.3.0" date="2025-01-10">
       <description translate="no">
         <ul>
           <li>Bumped tools and dependencies - enjoy much better archiving using an up-to-date SingleFile version</li>
