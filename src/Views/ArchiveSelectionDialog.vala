@@ -30,7 +30,7 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 			};
 			check_box.toggled.connect (on_toggled);
 			action_row.add_prefix (check_box);
-			action_row.activated.connect (on_activated);
+			action_row.activated.connect (toggle_checkbox);
 
 			this.child = progress_bin;
 		}
@@ -39,7 +39,7 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 			toggled ();
 		}
 
-		private void on_activated () {
+		public void toggle_checkbox () {
 			check_box.active = !check_box.active;
 		}
 
@@ -80,6 +80,7 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 			css_classes = {"boxed-list"},
 			margin_top = margin_bottom = 4
 		};
+		listbox.row_activated.connect (on_listboxrow_activated);
 		var scrolledwindow = new Gtk.ScrolledWindow () {
 			child = new Adw.Clamp () {
 				child = listbox,
@@ -104,6 +105,13 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 		toolbar_view.set_content (scrolledwindow);
 
 		this.child = toolbar_view;
+	}
+
+	private void on_listboxrow_activated (Gtk.ListBoxRow row) {
+		var archive_row = row as ArchiveRow;
+		if (archive_row == null) return;
+
+		archive_row.toggle_checkbox ();
 	}
 
 	ArchiveRow[] archive_rows = {};

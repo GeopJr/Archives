@@ -10,13 +10,22 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 	}
 
 	WebKit.ContextMenuItem as_cm;
+	WebKit.ContextMenuItem aa_cm;
+	GLib.SimpleAction al_action;
 	construct {
 		this.has_navigation_bar = true;
 		this.webview.notify["uri"].connect (on_uri_change);
 
 		var as_action = new GLib.SimpleAction ("archive-selection", null);
 		as_action.activate.connect (on_archive_selection);
-		as_cm= new WebKit.ContextMenuItem.from_gaction (as_action, _("Archive All Selected Links"), null);
+		as_cm = new WebKit.ContextMenuItem.from_gaction (as_action, _("Archive All Selected Links"), null);
+
+		var aa_action = new GLib.SimpleAction ("archive-all", null);
+		aa_action.activate.connect (on_archive_all);
+		aa_cm = new WebKit.ContextMenuItem.from_gaction (aa_action, _("Archive All Links"), null);
+
+		al_action = new GLib.SimpleAction ("archive-selected-link", VariantType.STRING);
+		al_action.activate.connect (on_archive_selected_link);
 
 		this.webview.web_context.set_cache_model (settings.cache ? WebKit.CacheModel.WEB_BROWSER : WebKit.CacheModel.DOCUMENT_VIEWER);
 		this.add_findbar ();
@@ -151,9 +160,67 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 	protected override bool on_context_menu (WebKit.ContextMenu context_menu, WebKit.HitTestResult hit_test_result) {
 		if (hit_test_result.context_is_selection ()) {
 			context_menu.append (as_cm);
+		} else if (hit_test_result.context_is_link ()) {
+			string url = hit_test_result.link_uri.strip ();
+			if (url.length > 0 && url.down ().has_prefix ("http")) {
+				var al_cm = new WebKit.ContextMenuItem.from_gaction (al_action, _("Archive Link"), new Variant.string (url));
+				context_menu.append (al_cm);
+			}
+		} else if (
+			!hit_test_result.context_is_editable ()
+			&& !hit_test_result.context_is_image ()
+			&& !hit_test_result.context_is_media ()
+			&& !hit_test_result.context_is_scrollbar ()
+		) {
+			context_menu.append (aa_cm);
 		}
 
 		return base.on_context_menu (context_menu, hit_test_result);
+	}
+
+	private void on_archive_all () {
+		string script = """
+			const links = [...document.querySelectorAll('a')].map(x => x.href);
+			return JSON.stringify(Array.from(new Set(links.filter (x => x && x.toLowerCase().startsWith("http")))));
+		""";
+		this.webview.call_async_javascript_function.begin (
+			script,
+			-1,
+			null,
+			null,
+			null,
+			null,
+			(obj, res) => {
+				string[] selection_links = {};
+				try {
+					Json.Parser parser = new Json.Parser ();
+					parser.load_from_data (this.webview.call_async_javascript_function.end (res).to_string ());
+
+					var arr = parser.get_root ().get_array ();
+					arr.foreach_element ((array, i, node) => {
+						string found_url = node.get_string ();
+						if (found_url != this.webview.uri)
+							selection_links += found_url;
+					});
+				} catch (Error e) {
+					string msg = _(@"Couldn't retrieve links from page: $(e.message)");
+					critical (msg);
+					app.toast (msg, 5);
+				}
+
+				if (selection_links.length == 0) {
+					app.toast (_("No links found in selection."));
+				} else {
+					app.show_link_selection_dialog (selection_links);
+				}
+			}
+		);
+	}
+
+	private void on_archive_selected_link (GLib.SimpleAction action, GLib.Variant? value) {
+		if (value == null) return;
+
+		app.show_link_selection_dialog ({value.get_string ()});
 	}
 
 	private void on_archive_selection () {
