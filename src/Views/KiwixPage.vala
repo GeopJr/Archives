@@ -16,5 +16,6 @@ public class Archives.Views.KiwixPage : Views.WebViewPage {
 		this.webview.load_uri (@"http://localhost:$(app.server.port)/kiwix/index.html?allowInternetAccess=false&contentInjectionMode=jquery&defaultModeChangeAlertDisplayed=true");
 
 		this.webview.web_context.set_cache_model (WebKit.CacheModel.WEB_BROWSER);
+		this.add_findbar ();
 	}
 }
