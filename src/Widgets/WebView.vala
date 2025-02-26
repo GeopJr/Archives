@@ -2,7 +2,7 @@ public class Archives.Widgets.WebView : WebKit.WebView {
 	construct {
 		WebKit.Settings webkit_settings = new WebKit.Settings () {
 			default_font_family = Gtk.Settings.get_default ().gtk_font_name,
-			allow_file_access_from_file_urls = false,
+			allow_file_access_from_file_urls = Build.PROFILE == "development" || Archives.is_flatpak,
 			allow_modal_dialogs = false,
 			allow_universal_access_from_file_urls = false,
 			auto_load_images = true,
