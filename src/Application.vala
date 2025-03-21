@@ -174,6 +174,15 @@ namespace Archives {
 			});
 			dialog.present (this.main_window);
 
+			// translators: Application metainfo for the app "Calligraphy". <https://gitlab.gnome.org/GeopJr/Calligraphy>
+			dialog.add_other_app ("dev.geopjr.Calligraphy", _("Calligraphy"), _("Turn text into ASCII banners"));
+
+			// translators: Application metainfo for the app "Collision". <https://github.com/GeopJr/Collision>
+			dialog.add_other_app ("dev.geopjr.Collision", _("Collision"), _("Check hashes for your files"));
+
+			// translators: Application metainfo for the app "Tuba". <https://github.com/GeopJr/Tuba/>
+			dialog.add_other_app ("dev.geopjr.Tuba", _("Tuba"), _("Browse the Fediverse"));
+
 			GLib.Idle.add (() => {
 				var style = Utils.Celebrate.get_celebration_css_class (new GLib.DateTime.now ());
 				if (style != "")

@@ -59,14 +59,14 @@ asresources = gnome.compile_resources(
     c_name: 'as',
 )
 
-gtk_dep = dependency('gtk4', version: '>=4.13.4', required: true)
-libadwaita_dep = dependency('libadwaita-1', version: '>=1.5', required: true)
+gtk_dep = dependency('gtk4', version: '>=4.17.5', required: true)
+libadwaita_dep = dependency('libadwaita-1', version: '>=1.7', required: true)
 
 sources = files()
 subdir('src')
 
 final_deps = [
-  dependency('glib-2.0', version: '>=2.76.0'),
+  dependency('glib-2.0', version: '>=2.80.0'),
   dependency('libsoup-3.0'),
   dependency('json-glib-1.0', version: '>=1.4.4'),
   gtk_dep,
@@ -75,11 +75,11 @@ final_deps = [
 ]
 
 executable(
-    meson.project_name(),
-    asresources,
-    sources,
-    dependencies: final_deps,
-    install: true,
+  meson.project_name(),
+  asresources,
+  sources,
+  dependencies: final_deps,
+  install: true,
 )
 
 subdir('data')
