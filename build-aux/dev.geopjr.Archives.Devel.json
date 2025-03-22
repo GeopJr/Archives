@@ -40,56 +40,56 @@
                 {
                     "type" : "archive",
                     "dest" : "offline/ruffle/",
-                    "url" : "https://github.com/ruffle-rs/ruffle/releases/download/nightly-2025-02-26/ruffle-nightly-2025_02_26-web-selfhosted.zip",
-                    "sha256" : "1381aeddc55a372ac374919dd498ce98be34d8450d0c045636f73974fff67a22"
+                    "url" : "https://github.com/ruffle-rs/ruffle/releases/download/nightly-2025-03-21/ruffle-nightly-2025_03_21-web-selfhosted.zip",
+                    "sha256" : "808aba990284bef291bd3e50237c09e38d78d0895503884d038abe6367119423"
                 },
                 {
                     "type" : "file",
                     "dest" : "offline/",
-                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/77cf1b325139b95a2ca64616b9dfd60be0971e14/lib/single-file.js",
-                    "sha256" : "a0678bf9286f44e9cba5a5d84a6fb1ff8d225f8b9c78d262bd09d5b0cae3aa1e"
+                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/735ee59616129f16244262a36923ef92dd8d5b9a/lib/single-file.js",
+                    "sha256" : "47a5022622706259156b59f60afe34be32ad0ba5f4eb91963ec53cb9a5eb558a"
                 },
                 {
                     "type" : "file",
                     "dest" : "offline/",
-                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/77cf1b325139b95a2ca64616b9dfd60be0971e14/lib/single-file-bootstrap.js",
+                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/735ee59616129f16244262a36923ef92dd8d5b9a/lib/single-file-bootstrap.js",
                     "sha256" : "139eb576fbd4eb411099151ed9d6edcb9bce79e0a0d4f8c9f104c31cc0013e3f"
                 },
                 {
                     "type" : "file",
                     "dest" : "offline/",
-                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/77cf1b325139b95a2ca64616b9dfd60be0971e14/lib/single-file-hooks-frames.js",
+                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/735ee59616129f16244262a36923ef92dd8d5b9a/lib/single-file-hooks-frames.js",
                     "sha256" : "4c34e85dafb9bc3f5b29c1bd4b613f041953f83b411127d3773e907f28565375"
                 },
                 {
                     "type" : "file",
                     "dest" : "offline/",
-                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/77cf1b325139b95a2ca64616b9dfd60be0971e14/lib/single-file-zip.min.js",
+                    "url" : "https://raw.githubusercontent.com/gildas-lormeau/SingleFile-MV3/735ee59616129f16244262a36923ef92dd8d5b9a/lib/single-file-zip.min.js",
                     "sha256" : "1418380d6a57c9ee68888374ed5da12b3fabb2df4e2815825143248ce3d93a5c"
                 },
                 {
                     "type" : "file",
                     "dest" : "data/vendored/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/74e6abc30951bd8602f2ed059ac5b5dd9adba9db/ui.js",
-                    "sha256" : "c9e06bf15dc5df575b5fb95eae0e271278aa93cac03aac12acf9016473f40e8d"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/4f22f525c82cce6f8754ead51c66849b09794571/ui.js",
+                    "sha256" : "339a49d3b9536fdfcace07aa6bda2e1f44d876909501dfdd7eecd3050df65969"
                 },
                 {
                     "type" : "file",
                     "dest" : "data/vendored/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/74e6abc30951bd8602f2ed059ac5b5dd9adba9db/sw.js",
-                    "sha256" : "07780edd3bbff9bb5bd2002141edeaa5c63b950ff8d81a3a0b2377b28f16a13e"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/4f22f525c82cce6f8754ead51c66849b09794571/sw.js",
+                    "sha256" : "f2a67cf6365560654b41f2a762566bf2dc3412155afb90b61fb861a72b0fba9e"
                 },
                 {
                     "type" : "file",
                     "dest" : "data/vendored/adblock/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/74e6abc30951bd8602f2ed059ac5b5dd9adba9db/adblock/adblock.gz",
-                    "sha256" : "e360962437897b10a1a0776ccc137f7b79b3d83792b401fce06d2015c5a4a960"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/4f22f525c82cce6f8754ead51c66849b09794571/adblock/adblock.gz",
+                    "sha256" : "fa72bb0dbd989563459bb300300bdeb5a60af03d67d4b19fa20d9f8a09e50218"
                 },
                 {
                     "type" : "archive",
                     "dest" : "offline/kiwix",
-                    "url" : "https://github.com/kiwix/kiwix-js/archive/7bd14bd3288eed8f0472bf4efc82f171ad315837.zip",
-                    "sha256" : "c6e4df586ce1e6d21cc02f88afa674fe931b12cd08e9e1329ce8300c610bf548"
+                    "url" : "https://github.com/kiwix/kiwix-js/archive/1d37317597ae516cd356a3048d8c4407e6291b41.zip",
+                    "sha256" : "99f1fd03884f4580e556203ff9d8b2857fe74e3f7297e104665ab0b9f948ec8c"
                 }
             ]
         }

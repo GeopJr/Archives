@@ -1,9 +1,16 @@
+// https://github.com/gildas-lormeau/SingleFile-MV3/commits/main/
+const string SINGLEFILE_COMMIT_HASH = "735ee59616129f16244262a36923ef92dd8d5b9a";
+// https://github.com/ruffle-rs/ruffle/releases
+const string RUFFLE_URL = "nightly-2025-03-21/ruffle-nightly-2025_03_21-web-selfhosted.zip";
+// https://github.com/webrecorder/replayweb.page/tree/gh-pages
+const string REPLAY_COMMIT_HASH = "4f22f525c82cce6f8754ead51c66849b09794571";
+// https://github.com/kiwix/kiwix-js/commits/gh-pages/
+const string KIWIX_HASH = "1d37317597ae516cd356a3048d8c4407e6291b41";
+
 const string GRESOURCE = "./data/gresource.xml";
 const string PARENT = "./data/vendored";
 const string FILENAME_BUNDLE = "single-filez-bundle.js";
 const string FILENAME_CAPTURE = "single-filez-capture.js";
-const string SINGLEFILE_COMMIT_HASH = "77cf1b325139b95a2ca64616b9dfd60be0971e14";
-const string RUFFLE_URL = "nightly-2025-02-26/ruffle-nightly-2025_02_26-web-selfhosted.zip";
 const string[] SINGLEFILE_FILES = {
   "lib/single-file.js",
   "lib/single-file-bootstrap.js",
@@ -15,13 +22,11 @@ const string[] ALLOWED_TYPES = {
 	".cjs",
 	".mjs"
 };
-const string REPLAY_COMMIT_HASH = "74e6abc30951bd8602f2ed059ac5b5dd9adba9db";
 const string[] REPLAY_FILES = {
 	"ui.js",
 	"sw.js",
 	"adblock/adblock.gz",
 };
-const string KIWIX_HASH = "7bd14bd3288eed8f0472bf4efc82f171ad315837";
 const string[] DISALLOWED_TYPES = {
 	".md",
 	".txt",
