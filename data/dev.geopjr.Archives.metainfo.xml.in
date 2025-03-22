@@ -49,6 +49,14 @@
     <control>touch</control>
   </recommends>
   <releases>
+    <release version="0.5.0" date="2025-03-22">
+      <description translate="no">
+        <ul>
+          <li>Libadwaita 1.7 additions</li>
+          <li>Bumped tools and dependencies</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.4.0" date="2025-02-26">
       <description translate="no">
         <ul>
