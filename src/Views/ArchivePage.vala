@@ -59,7 +59,7 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 		}
 	}
 
-	public async void archive () {
+	public async void archive (GLib.File? folder = null) {
 		debug (@"Archiving $(this.webview.uri)");
 		this.can_archive = false;
 		this.progress = 0.0;
@@ -119,14 +119,18 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 
 			this.progress = 0.5;
 			Json.Node node = parser.get_root ();
+
+			string initial_name = node.get_object ().get_string_member ("filename");
 			var chooser = new Gtk.FileDialog () {
 				title = _("Save Archive"),
 				modal = true,
-				initial_name = node.get_object ().get_string_member ("filename")
+				initial_name = initial_name
 			};
 
 			try {
-				var file = yield chooser.save (app.main_window, null);
+				var file = folder == null
+					? yield chooser.save (app.main_window, null)
+					: GLib.File.new_for_path (GLib.Path.build_filename (folder.get_path (), initial_name));
 				if (file != null) {
 					this.progress = 0.75;
 					debug (@"Picked save location for $(this.webview.uri)");

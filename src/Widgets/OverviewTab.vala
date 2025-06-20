@@ -62,7 +62,7 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 		this.back_button.sensitive =
 		this.forward_button.sensitive =
 		this.search_entry.sensitive = false;
-		archive_page.archive.begin ((obj, res) => {
+		archive_page.archive.begin (null, (obj, res) => {
 			archive_page.archive.end (res);
 			this.working = false;
 			this.back_button.sensitive = content_page.can_go_back;

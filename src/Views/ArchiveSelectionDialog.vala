@@ -43,9 +43,11 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 			check_box.active = !check_box.active;
 		}
 
-		public void archive () {
+		GLib.File? archive_folder = null;
+		public void archive (GLib.File? folder) {
 			if (page != null) return;
 
+			archive_folder = folder;
 			page = new Views.ArchivePage (this.url);
 			page.loaded.connect (on_page_loaded);
 			page.bind_property ("progress", progress_bin, "progress", BindingFlags.SYNC_CREATE);
@@ -56,7 +58,7 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 		}
 
 		private async void archive_real () {
-			yield this.page.archive ();
+			yield this.page.archive (archive_folder);
 			this.archived = true;
 		}
 	}
@@ -64,6 +66,7 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 	Gtk.Button close_button;
 	Gtk.Button archive_all_button;
 	Gtk.ListBox listbox;
+	GLib.File? archive_folder = null;
 	construct {
 		this.title = _("Archive Selected Links");
 		this.content_width = 400;
@@ -127,21 +130,35 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 
 	ArchiveRow[] active_rows = {};
 	private void on_archive () {
-		close_button.sensitive = false;
-		archive_all_button.sensitive = false;
-		listbox.can_target = false;
+		var chooser = new Gtk.FileDialog () {
+			title = _("Save Archives"),
+			modal = true
+		};
 
-		foreach (var row in archive_rows) {
-			if (row.active) {
-				active_rows += row;
-				row.hide_checkbox = true;
-			} else {
-				listbox.remove (row);
+		chooser.select_folder.begin (app.main_window, null, (obj, res) => {
+			try {
+				archive_folder = chooser.select_folder.end (res);
+				close_button.sensitive = false;
+				archive_all_button.sensitive = false;
+				listbox.can_target = false;
+
+				foreach (var row in archive_rows) {
+					if (row.active) {
+						active_rows += row;
+						row.hide_checkbox = true;
+					} else {
+						listbox.remove (row);
+					}
+				}
+				archive_rows = {};
+
+				archive_selected_rows ();
+			} catch (Error e) {
+				// User dismissing the dialog also ends here so don't make it sound like
+				// it's an error
+				warning (@"Couldn't get the result of FileDialog for attachment: $(e.message)");
 			}
-		}
-		archive_rows = {};
-
-		archive_selected_rows ();
+		});
 	}
 
 	int archive_index = 0;
@@ -152,7 +169,7 @@ public class Archives.Views.ArchiveSelectionDialog : Adw.Dialog {
 		int max = int.min (active_rows.length, archive_index + CON);
 		for (int i = archive_index; i < max; i++) {
 			total_archiving += 1;
-			active_rows[i].archive ();
+			active_rows[i].archive (archive_folder);
 			archive_index += 1;
 		}
 	}
