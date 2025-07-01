@@ -49,6 +49,14 @@
     <control>touch</control>
   </recommends>
   <releases>
+    <release version="0.6.0" date="2025-07-01">
+      <description translate="no">
+        <ul>
+          <li>Batch page archiving will now only ask for a destination folder</li>
+          <li>Bumped tools and dependencies</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.5.0" date="2025-03-22">
       <description translate="no">
         <ul>
