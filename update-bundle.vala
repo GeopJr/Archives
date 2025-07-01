@@ -1,11 +1,11 @@
 // https://github.com/gildas-lormeau/SingleFile-MV3/commits/main/
-const string SINGLEFILE_COMMIT_HASH = "735ee59616129f16244262a36923ef92dd8d5b9a";
+const string SINGLEFILE_COMMIT_HASH = "849709c2a675054577217efa0d50e7b9e197823e";
 // https://github.com/ruffle-rs/ruffle/releases
-const string RUFFLE_URL = "nightly-2025-03-21/ruffle-nightly-2025_03_21-web-selfhosted.zip";
+const string RUFFLE_URL = "nightly-2025-07-01/ruffle-nightly-2025_07_01-web-selfhosted.zip";
 // https://github.com/webrecorder/replayweb.page/tree/gh-pages
 const string REPLAY_COMMIT_HASH = "4f22f525c82cce6f8754ead51c66849b09794571";
 // https://github.com/kiwix/kiwix-js/commits/gh-pages/
-const string KIWIX_HASH = "1d37317597ae516cd356a3048d8c4407e6291b41";
+const string KIWIX_HASH = "380f5e3df7a05f0f957021867495c6305b98e7c9";
 
 const string GRESOURCE = "./data/gresource.xml";
 const string PARENT = "./data/vendored";

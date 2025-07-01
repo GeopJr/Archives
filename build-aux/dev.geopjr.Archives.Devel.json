@@ -40,8 +40,8 @@
                 {
                     "type" : "archive",
                     "dest" : "offline/ruffle/",
-                    "url" : "https://github.com/ruffle-rs/ruffle/releases/download/nightly-2025-03-21/ruffle-nightly-2025_03_21-web-selfhosted.zip",
-                    "sha256" : "808aba990284bef291bd3e50237c09e38d78d0895503884d038abe6367119423"
+                    "url" : "https://github.com/ruffle-rs/ruffle/releases/download/nightly-2025-07-01/ruffle-nightly-2025_07_01-web-selfhosted.zip",
+                    "sha256" : "f52752931be6d4741d6d73f71798099a10531f2b730cd5013ce0e70ee528df3f"
                 },
                 {
                     "type" : "file",
@@ -70,26 +70,26 @@
                 {
                     "type" : "file",
                     "dest" : "data/vendored/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/4f22f525c82cce6f8754ead51c66849b09794571/ui.js",
-                    "sha256" : "339a49d3b9536fdfcace07aa6bda2e1f44d876909501dfdd7eecd3050df65969"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/6112438383e9a4c419f4d3b0967016a595692ec8/ui.js",
+                    "sha256" : "461fb6eb9a428b064f8070ee725507c3d20442e8369757dbb3a8681d875d4c04"
                 },
                 {
                     "type" : "file",
                     "dest" : "data/vendored/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/4f22f525c82cce6f8754ead51c66849b09794571/sw.js",
-                    "sha256" : "f2a67cf6365560654b41f2a762566bf2dc3412155afb90b61fb861a72b0fba9e"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/6112438383e9a4c419f4d3b0967016a595692ec8/sw.js",
+                    "sha256" : "0cc2ea1e921f579041cbda3f781676e5c84f0b25bca61342a8251353f6abe4a9"
                 },
                 {
                     "type" : "file",
                     "dest" : "data/vendored/adblock/",
-                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/4f22f525c82cce6f8754ead51c66849b09794571/adblock/adblock.gz",
-                    "sha256" : "fa72bb0dbd989563459bb300300bdeb5a60af03d67d4b19fa20d9f8a09e50218"
+                    "url" : "https://raw.githubusercontent.com/webrecorder/replayweb.page/6112438383e9a4c419f4d3b0967016a595692ec8/adblock/adblock.gz",
+                    "sha256" : "c37a139c1d8d3fa73aa10a8abc532f990b16a8e904ab974ab10180862b38c377"
                 },
                 {
                     "type" : "archive",
                     "dest" : "offline/kiwix",
-                    "url" : "https://github.com/kiwix/kiwix-js/archive/1d37317597ae516cd356a3048d8c4407e6291b41.zip",
-                    "sha256" : "99f1fd03884f4580e556203ff9d8b2857fe74e3f7297e104665ab0b9f948ec8c"
+                    "url" : "https://github.com/kiwix/kiwix-js/archive/380f5e3df7a05f0f957021867495c6305b98e7c9.zip",
+                    "sha256" : "d34b405fec4ce57de7c860a80d744702c0c8ab85d48ad98c3e65bdae51231128"
                 }
             ]
         }
