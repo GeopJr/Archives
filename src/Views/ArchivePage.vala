@@ -128,9 +128,18 @@ public class Archives.Views.ArchivePage : Views.WebViewPage {
 			};
 
 			try {
-				var file = folder == null
-					? yield chooser.save (app.main_window, null)
-					: GLib.File.new_for_path (GLib.Path.build_filename (folder.get_path (), initial_name));
+				GLib.File file;
+				if (folder == null) {
+					file = yield chooser.save (app.main_window, null);
+				} else {
+					file = GLib.File.new_for_path (GLib.Path.build_filename (folder.get_path (), initial_name));
+
+					for (int i = 0; i < 1000; i++) {
+						if (!file.query_exists ()) break;
+						file = GLib.File.new_for_path (GLib.Path.build_filename (folder.get_path (), @"$(GLib.Uuid.string_random ())_$initial_name"));
+					}
+				}
+
 				if (file != null) {
 					this.progress = 0.75;
 					debug (@"Picked save location for $(this.webview.uri)");
