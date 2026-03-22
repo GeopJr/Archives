@@ -22,7 +22,7 @@ The app is still in an early stage, there are more tools and settings planned bu
 
 1. Install and open [GNOME Builder](https://flathub.org/apps/details/org.gnome.Builder)
 1. Select "Clone Repository…"
-1. Clone `https://gitlab.gnome.org/GeopJr/Archives.git`
+1. Clone `https://codeberg.org/GeopJr/Archives.git`
 1. Run the project with the ▶ button at the top, or by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Space</kbd>
 
 ## Manually
@@ -60,8 +60,10 @@ Archives wouldn't exist without these powerful tools, check them out!
 # Contributing
 
 1. Read the [Code of Conduct](./CODE_OF_CONDUCT.md)
-2. Fork it ( https://gitlab.gnome.org/GeopJr/Archives/-/forks/new )
+2. Fork it ( https://codeberg.org/GeopJr/Archives/fork )
 3. Create your feature branch (git checkout -b my-new-feature)
 4. Commit your changes (git commit -am 'Add some feature')
 5. Push to the branch (git push origin my-new-feature)
 6. Create a new Pull Request
+
+[![Translation status](https://translate.codeberg.org/widgets/archives/-/archives/287x66-white.png)](https://translate.codeberg.org/engage/archives)

@@ -23,19 +23,19 @@
     <name translate="no">Evangelos "GeopJr" Paterakis</name>
   </developer>
   <url type="homepage">https://archives.geopjr.dev/</url>
-  <url type="bugtracker">https://gitlab.gnome.org/GeopJr/Archives/-/issues</url>
+  <url type="bugtracker">https://codeberg.org/GeopJr/Archives/issues</url>
   <url type="donation">https://geopjr.dev/donate</url>
-  <url type="vcs-browser">https://gitlab.gnome.org/GeopJr/Archives/</url>
-  <url type="contribute">https://gitlab.gnome.org/GeopJr/Archives#contributing</url>
+  <url type="vcs-browser">https://codeberg.org/GeopJr/Archives</url>
+  <url type="contribute">https://codeberg.org/GeopJr/Archives#contributing</url>
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://gitlab.gnome.org/GeopJr/Archives/-/raw/main/data/screenshots/screenshot-1.png</image>
+      <image type="source">https://codeberg.org/GeopJr/Archives/media/commit/cc242708261924848868d6fec3cbb63a5767770b/data/screenshots/screenshot-1.png</image>
     </screenshot>
     <screenshot>
-      <image type="source">https://gitlab.gnome.org/GeopJr/Archives/-/raw/main/data/screenshots/screenshot-2.png</image>
+      <image type="source">https://codeberg.org/GeopJr/Archives/media/commit/cc242708261924848868d6fec3cbb63a5767770b/data/screenshots/screenshot-2.png</image>
     </screenshot>
     <screenshot>
-      <image type="source">https://gitlab.gnome.org/GeopJr/Archives/-/raw/main/data/screenshots/screenshot-3.png</image>
+      <image type="source">https://codeberg.org/GeopJr/Archives/media/commit/cc242708261924848868d6fec3cbb63a5767770b/data/screenshots/screenshot-3.png</image>
     </screenshot>
   </screenshots>
   <content_rating type="oars-1.1" />

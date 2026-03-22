@@ -7,8 +7,8 @@
 >
 	<name xml:lang="en">Archives</name>
 	<shortdesc xml:lang="en">Create and view web archives</shortdesc>
-	<homepage rdf:resource="https://gitlab.gnome.org/GeopJr/Archives" />
-	<bug-database rdf:resource="https://gitlab.gnome.org/GeopJr/Archives/-/issues" />
+	<homepage rdf:resource="https://codeberg.org/GeopJr/Archives" />
+	<bug-database rdf:resource="https://codeberg.org/GeopJr/Archives/issues" />
 	<programming-language>Vala</programming-language>
 	<platform>GTK 4</platform>
 	<platform>Libadwaita</platform>

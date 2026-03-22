@@ -161,6 +161,7 @@ namespace Archives {
 				// translators: Name <email@domain.com> or Name https://website.example
 				translator_credits = _("translator-credits")
 			};
+			dialog.add_link (_("Translate"), Build.TRANSLATE_WEBSITE);
 			dialog.add_link (_("Donate"), Build.DONATE_WEBSITE);
 			dialog.add_legal_section ("SingleFile", "© Gildas Lormeau", Gtk.License.AGPL_3_0, null);
 			dialog.add_legal_section ("ReplayWeb.page", "© Webrecorder Software", Gtk.License.AGPL_3_0, null);

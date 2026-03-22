@@ -2,6 +2,7 @@
 PREFIX ?= /usr
 
 offline ?=
+use_libsoup ?=
 # Remove the devel headerbar style:
 # make release=1
 release ?=
@@ -9,7 +10,7 @@ release ?=
 all: build
 
 update_bundle:
-	valac $(if $(offline),--define=OFFLINE,) --target-glib=2.74 --pkg gtk4 $(if $(offline),,--pkg libarchive) --pkg webkitgtk-6.0 update-bundle.vala && ./update-bundle
+	valac $(if $(offline),--define=OFFLINE,) $(if $(use_libsoup),--define=USE_LIBSOUP,) --target-glib=2.74 --pkg gtk4 $(if $(offline),,--pkg libarchive) $(if $(use_libsoup),,--pkg libsoup-3.0) --pkg webkitgtk-6.0 update-bundle.vala && ./update-bundle
 
 build:
 	meson setup builddir --prefix=$(PREFIX)

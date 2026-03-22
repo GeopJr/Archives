@@ -56,6 +56,8 @@ string get_gh_url (string file_name, Service service = Service.SINGLEFILE) {
 void main () {
 	#if OFFLINE
 		message ("Offline mode");
+	#elif USE_LIBSOUP
+		message ("Libsoup mode");
 	#endif
 
 	try {
@@ -65,13 +67,18 @@ void main () {
 		message (@"Created $PARENT");
 
 		message ("Fetching single-file-zip.min.js…");
-		#if OFFLINE
-			File zip_file_remote = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, OFFLINE_FOLDER, "single-file-zip.min.js"));
-		#else
-			File zip_file_remote = File.new_for_uri (get_gh_url ("lib/single-file-zip.min.js"));
-		#endif
+
 		uint8[] contents;
-		zip_file_remote.load_contents (null, out contents, null);
+		#if USE_LIBSOUP
+			contents = soup_fetch (get_gh_url ("lib/single-file-zip.min.js"));
+		#else
+			#if OFFLINE
+				File zip_file_remote = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, OFFLINE_FOLDER, "single-file-zip.min.js"));
+			#else
+				File zip_file_remote = File.new_for_uri (get_gh_url ("lib/single-file-zip.min.js"));
+			#endif
+			zip_file_remote.load_contents (null, out contents, null);
+		#endif
 		message ("Fetched single-file-zip.min.js");
 
 		message (@"Creating $FILENAME_CAPTURE…");
@@ -103,14 +110,18 @@ void main () {
 
 		foreach (string file_name in SINGLEFILE_FILES) {
 			message (@"Fetching $file_name…");
-			#if OFFLINE
-				File file_remote = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, OFFLINE_FOLDER, GLib.Path.get_basename (file_name)));
+			#if USE_LIBSOUP
+				dos.write_all (soup_fetch (get_gh_url (file_name)), null, null);
 			#else
-				string url = get_gh_url (file_name);
-				File file_remote = File.new_for_uri (url);
-			#endif
+				#if OFFLINE
+					File file_remote = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, OFFLINE_FOLDER, GLib.Path.get_basename (file_name)));
+				#else
+					string url = get_gh_url (file_name);
+					File file_remote = File.new_for_uri (url);
+				#endif
 
-			dos.splice (file_remote.read (), GLib.OutputStreamSpliceFlags.CLOSE_SOURCE);
+				dos.splice (file_remote.read (), GLib.OutputStreamSpliceFlags.CLOSE_SOURCE);
+			#endif
 			dos.put_string ("\n");
 			message (@"Fetched $file_name");
 		}
@@ -270,9 +281,15 @@ void process_ruffle (out string[] to_add_to_gresource) throws GLib.Error {
 		string ruffle_location = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle.zip");
 		string ruffle_out = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "ruffle");
 
-		File ruffle_file = File.new_for_uri (@"https://github.com/ruffle-rs/ruffle/releases/download/$RUFFLE_URL");
 		File ruffle_zip = File.new_for_path (ruffle_location);
-		ruffle_file.copy (ruffle_zip, FileCopyFlags.OVERWRITE);
+		#if USE_LIBSOUP
+			FileOutputStream os = ruffle_zip.create (FileCreateFlags.PRIVATE);
+			os.write_all (soup_fetch (@"https://github.com/ruffle-rs/ruffle/releases/download/$RUFFLE_URL"), null, null);
+			os.close ();
+		#else
+			File ruffle_file = File.new_for_uri (@"https://github.com/ruffle-rs/ruffle/releases/download/$RUFFLE_URL");
+			ruffle_file.copy (ruffle_zip, FileCopyFlags.OVERWRITE);
+		#endif
 		message ("Fetched Ruffle");
 
 		File ruffle_out_file = File.new_for_path (ruffle_out);
@@ -338,8 +355,14 @@ void process_replayweb () throws GLib.Error {
 			File file_local = File.new_for_path (GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, file_name));
 			GLib.DirUtils.create_with_parents (GLib.Path.get_dirname (file_local.get_path ()), 0775);
 
-			File file_remote = File.new_for_uri (get_gh_url (file_name, Service.REPLAY));
-			file_remote.copy (file_local, FileCopyFlags.OVERWRITE);
+			#if USE_LIBSOUP
+				FileOutputStream os = file_local.create (FileCreateFlags.PRIVATE);
+				os.write_all (soup_fetch (get_gh_url (file_name, Service.REPLAY)), null, null);
+				os.close ();
+			#else
+				File file_remote = File.new_for_uri (get_gh_url (file_name, Service.REPLAY));
+				file_remote.copy (file_local, FileCopyFlags.OVERWRITE);
+			#endif
 			message (@"Fetched $file_name");
 		}
 		message ("Fetched ReplayWeb.page");
@@ -372,9 +395,16 @@ void process_kiwix (out string[] to_add_to_gresource_kiwix) throws GLib.Error {
 		string kiwix_location = GLib.Path.build_path (Path.DIR_SEPARATOR_S, PARENT, "kiwix.zip");
 
 		message ("Fetching Kiwix…");
-		File kiwix_file = File.new_for_uri (@"https://github.com/kiwix/kiwix-js/archive/$KIWIX_HASH.zip");
 		File kiwix_zip = File.new_for_path (kiwix_location);
-		kiwix_file.copy (kiwix_zip, FileCopyFlags.OVERWRITE);
+
+		#if USE_LIBSOUP
+			FileOutputStream os = kiwix_zip.create (FileCreateFlags.PRIVATE);
+			os.write_all (soup_fetch (@"https://github.com/kiwix/kiwix-js/archive/$KIWIX_HASH.zip"), null, null);
+			os.close ();
+		#else
+			File kiwix_file = File.new_for_uri (@"https://github.com/kiwix/kiwix-js/archive/$KIWIX_HASH.zip");
+			kiwix_file.copy (kiwix_zip, FileCopyFlags.OVERWRITE);
+		#endif
 
 		File kiwix_out_file = File.new_for_path (kiwix_out);
 		if (!kiwix_out_file.query_exists ()) kiwix_out_file.make_directory_with_parents ();
@@ -515,3 +545,18 @@ public void copy_recursive (string kiwix_dir_path, string current_rel_vendored_d
 
 	files = files_temp;
 }
+
+#if USE_LIBSOUP
+	public uint8[] soup_fetch (string url) throws Error {
+		var session = new Soup.Session ();
+		var message = new Soup.Message ("GET", url);
+
+		Bytes bytes = session.send_and_read (message, null);
+
+		if (message.status_code != 200) {
+			throw new IOError.FAILED ("HTTP %u while fetching %s".printf ((uint) message.status_code, url));
+		}
+
+		return (uint8[]) bytes.get_data ();
+	}
+#endif
