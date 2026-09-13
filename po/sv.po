@@ -1,0 +1,343 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-26 03:46+0200\n"
+"PO-Revision-Date: 2026-09-13 09:09+0000\n"
+"Last-Translator: yeager <yeager@noreply.codeberg.org>\n"
+"Language-Team: Swedish <https://translate.codeberg.org/projects/archives/"
+"archives/sv/>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
+
+#: data/dev.geopjr.Archives.desktop.in:3
+#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:34
+#: data/ui/overviewtab.ui:100 src/Widgets/OverviewTab.vala:26
+#: src/Widgets/OverviewTab.vala:80
+msgid "Archives"
+msgstr "Archives"
+
+#: data/dev.geopjr.Archives.desktop.in:4
+#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:101
+msgid "Create and view web archives"
+msgstr "Skapa och visa webbarkiv"
+
+#: data/dev.geopjr.Archives.desktop.in:5
+msgid "Website Archiver"
+msgstr "Webbplatsarkivare"
+
+#: data/dev.geopjr.Archives.desktop.in:10
+msgid "archive;singlefile;replayweb;flash;web;"
+msgstr "arkiv;enstaka fil;uppspelningswebb;flash;webb;"
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:9
+msgid ""
+"Every day, countless of websites go offline for good. High server costs, "
+"government censorship, venture capitalism are some of the threats, many of "
+"your favorite websites are facing."
+msgstr ""
+"Varje dag försvinner otaliga webbplatser från nätet för gott. Höga "
+"serverkostnader, statlig censur och riskkapitalism är några av de hot som "
+"många av dina favoritwebbplatser står inför."
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:12
+msgid ""
+"Archives allows you to archive any website, including its assets, into a "
+"self-contained hybrid HTML/ZIP. These HTML files can be viewed in any "
+"browser (or in-app), be shared or be extracted like a regular ZIP file. "
+"Archives can additionally view WARC, WACZ, HAR, ZIM and SWF files."
+msgstr ""
+"Med Archives kan du arkivera vilken webbplats som helst, inklusive dess "
+"resurser, till en komplett hybrid HTML/ZIP-fil. Dessa HTML-filer kan visas i "
+"valfri webbläsare (eller inuti program), delas eller extraheras som en "
+"vanlig ZIP-fil. Archives kan dessutom visa WARC, WACZ, HAR, ZIM och SWF "
+"filer."
+
+#: data/ui/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Allmänt"
+
+#: data/ui/help-overlay.ui:14
+msgid "Show Preferences"
+msgstr "Visa inställningar"
+
+#: data/ui/help-overlay.ui:20
+msgid "About"
+msgstr "Om"
+
+#: data/ui/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Visa genvägar"
+
+#: data/ui/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Avsluta"
+
+#: data/ui/overviewtab.ui:16
+msgid "Go Home"
+msgstr "Gå hem"
+
+#. translators: verb
+#: data/ui/overviewtab.ui:27 src/Views/ArchiveSelectionDialog.vala:96
+msgid "Archive"
+msgstr "Arkiv"
+
+#: data/ui/overviewtab.ui:41
+msgid "Menu"
+msgstr "Meny"
+
+#: data/ui/overviewtab.ui:71
+msgid "Back"
+msgstr "Tillbaka"
+
+#: data/ui/overviewtab.ui:77
+msgid "Forward"
+msgstr "Framåt"
+
+#: data/ui/overviewtab.ui:109
+msgid "Archive a Website"
+msgstr "Arkivera en hemsida"
+
+#: data/ui/overviewtab.ui:119
+msgid "Open Kiwix"
+msgstr "Öppna Kiwix"
+
+#: data/ui/overviewtab.ui:128
+msgid "Open a HTML, WARC, SWF file"
+msgstr "Öppna en HTML-, WARC- eller SWF-fil"
+
+#: data/ui/overviewtab.ui:151
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: data/ui/overviewtab.ui:155
+msgid "Keyboard Shortcuts"
+msgstr "Tangentbordsgenvägar"
+
+#: data/ui/overviewtab.ui:159
+msgid "About Archives"
+msgstr "Om Archives"
+
+#: data/ui/preferences.ui:12
+msgid "General"
+msgstr "Allmänt"
+
+#: data/ui/preferences.ui:15
+msgid "Archiving"
+msgstr "Arkivering"
+
+#: data/ui/preferences.ui:19
+msgid "Custom User Agent"
+msgstr "Anpassad användaragent"
+
+#: data/ui/preferences.ui:25
+msgid "Browser Cache"
+msgstr "Webbläsarcache"
+
+#: data/ui/preferences.ui:26
+msgid "It can reduce bandwidth usage but may display stale content"
+msgstr "Det kan minska bandbreddsanvändningen men kan visa inaktuellt innehåll"
+
+#: data/ui/preferences.ui:31
+msgid "Compress HTML"
+msgstr "Komprimera HTML"
+
+#: data/ui/preferences.ui:36
+msgid "Compress CSS"
+msgstr "Komprimera CSS"
+
+#: data/ui/preferences.ui:41
+msgid "Set Content Security Policy"
+msgstr "Ställ in säkerhetspolicy för innehåll"
+
+#: data/ui/preferences.ui:42
+msgid "Prevent external sources from being loaded in the archives"
+msgstr "Förhindra att externa källor laddas in i arkiven"
+
+#: data/ui/preferences.ui:47
+msgid "Remove Hidden Elements"
+msgstr "Ta bort dolda element"
+
+#: data/ui/preferences.ui:48
+msgid "Non-visible elements won't be archived"
+msgstr "Icke-synliga element arkiveras inte"
+
+#: data/ui/preferences.ui:53
+msgid "Remove Unused Styles"
+msgstr "Ta bort oanvända stilar"
+
+#: data/ui/preferences.ui:54
+msgid "Styles that do not match any element will be removed"
+msgstr "Stilar som inte matchar något element kommer att tas bort"
+
+#: data/ui/preferences.ui:59
+msgid "Remove Unused Fonts"
+msgstr "Ta bort oanvända teckensnitt"
+
+#: data/ui/preferences.ui:64
+msgid "Remove Iframes"
+msgstr "Ta bort Iframes"
+
+#: data/ui/preferences.ui:69
+msgid "Display Infobar"
+msgstr "Visa infofält"
+
+#: data/ui/preferences.ui:70
+msgid ""
+"If the browser has the SingleFile extension installed, the archived page "
+"will display the archive date at the top right"
+msgstr ""
+"Om webbläsaren har SingleFile-tillägget installerat kommer den arkiverade "
+"sidan att visa arkiveringsdatumet längst upp till höger"
+
+#: data/ui/preferences.ui:75
+msgid "Embed Infobar"
+msgstr "Bädda in infofält"
+
+#: data/ui/preferences.ui:76
+msgid ""
+"Embed the infobar in the page so it's visible even if the browser does not "
+"have the SingleFile extension installed"
+msgstr ""
+"Bädda in informationsfältet på sidan så att det syns även om webbläsaren "
+"inte har SingleFile-tillägget installerat"
+
+#: data/ui/preferences.ui:81
+msgid "Save Deferred Images"
+msgstr "Spara uppskjutna bilder"
+
+#: data/ui/preferences.ui:82
+msgid ""
+"Images that load only when they become visible through scrolling, will be "
+"archived"
+msgstr ""
+"Bilder som bara laddas när de blir synliga när du rullar på sidan arkiveras"
+
+#: data/ui/preferences.ui:87
+msgid "Block Videos"
+msgstr "Blockera videor"
+
+#: data/ui/preferences.ui:88
+msgid "Videos won't be archived"
+msgstr "Videor kommer inte att arkiveras"
+
+#: data/ui/preferences.ui:93
+msgid "Block Audio Files"
+msgstr "Blockera ljudfiler"
+
+#: data/ui/preferences.ui:94
+msgid "Audio files won't be archived"
+msgstr "Ljudfiler arkiveras inte"
+
+#: data/ui/preferences.ui:99
+msgid "Block Scripts"
+msgstr "Blockera skript"
+
+#: data/ui/preferences.ui:100
+msgid "Scripts won't be archived"
+msgstr "Skript kommer inte att arkiveras"
+
+#: data/ui/preferences.ui:105
+msgid "Block Images"
+msgstr "Blockera bilder"
+
+#: data/ui/preferences.ui:106
+msgid "Images won't be archived"
+msgstr "Bilder kommer inte att arkiveras"
+
+#: data/ui/preferences.ui:111
+msgid "Block Styles"
+msgstr "Blockera stilar"
+
+#: data/ui/preferences.ui:112
+msgid "Styles won't be archived"
+msgstr "Stilar kommer inte att arkiveras"
+
+#: data/ui/preferences.ui:117
+msgid "Block Fonts"
+msgstr "Blockera teckensnitt"
+
+#: data/ui/preferences.ui:118
+msgid "Fonts won't be archived"
+msgstr "Teckensnitt arkiveras inte"
+
+#: data/ui/preferences.ui:125
+msgid "ReplayWeb.page"
+msgstr "ReplayWeb.page"
+
+#: data/ui/preferences.ui:128
+msgid "Block Ads"
+msgstr "Blockera reklam"
+
+#. translators: Name <email@domain.com> or Name https://website.example
+#: src/Application.vala:162
+msgid "translator-credits"
+msgstr "Luna Jernberg<lunajernberg@gnome.org>"
+
+#: src/Application.vala:164
+msgid "Donate"
+msgstr "Donera"
+
+#: src/Application.vala:169
+msgid "Libraries"
+msgstr "Bibliotek"
+
+#: src/Views/ArchivePage.vala:21
+msgid "Archive All Selected Links"
+msgstr "Arkivera alla valda länkar"
+
+#: src/Views/ArchivePage.vala:25
+msgid "Archive All Links"
+msgstr "Arkivera alla länkar"
+
+#: src/Views/ArchivePage.vala:123
+msgid "Save Archive"
+msgstr "Spara arkiv"
+
+#: src/Views/ArchivePage.vala:166
+msgid "Archive Link"
+msgstr "Arkivera länk"
+
+#: src/Views/ArchivePage.vala:212 src/Views/ArchivePage.vala:291
+msgid "No links found in selection."
+msgstr "Inga länkar hittades i markeringen."
+
+#: src/Views/ArchiveSelectionDialog.vala:68
+msgid "Archive Selected Links"
+msgstr "Arkivera valda länkar"
+
+#: src/Views/ArchiveSelectionDialog.vala:94
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: src/Widgets/FindBar.vala:11
+msgid "Type to search…"
+msgstr "Skriv för att söka…"
+
+#: src/Widgets/FindBar.vala:24
+msgid "Find previous occurrence of the search string"
+msgstr "Hitta tidigare förekomst av söksträng"
+
+#: src/Widgets/FindBar.vala:32
+msgid "Find next occurrence of the search string"
+msgstr "Hitta nästa förekomst av söksträng"
+
+#: src/Widgets/OverviewTab.vala:103
+msgid "All Supported Files"
+msgstr "Alla filer som stöds"
+
+#: src/Widgets/OverviewTab.vala:113
+msgid "Open"
+msgstr "Öppna"
