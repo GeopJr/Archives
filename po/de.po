@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-26 03:46+0200\n"
+"PO-Revision-Date: 2026-08-25 11:23+0000\n"
+"Last-Translator: chschmidt <chschmidt@noreply.codeberg.org>\n"
+"Language-Team: German <https://translate.codeberg.org/projects/archives/"
+"archives/de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2026.8.1\n"
+
+#: data/dev.geopjr.Archives.desktop.in:3
+#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:34
+#: data/ui/overviewtab.ui:100 src/Widgets/OverviewTab.vala:26
+#: src/Widgets/OverviewTab.vala:80
+msgid "Archives"
+msgstr "Archive"
+
+#: data/dev.geopjr.Archives.desktop.in:4
+#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:101
+msgid "Create and view web archives"
+msgstr "Webarchive erstellen und anzeigen"
+
+#: data/dev.geopjr.Archives.desktop.in:5
+msgid "Website Archiver"
+msgstr "Website Archivierer"
+
+#: data/dev.geopjr.Archives.desktop.in:10
+#, fuzzy
+msgid "archive;singlefile;replayweb;flash;web;"
+msgstr "Archiv;Einzeldatei;ReplayWeb;Flash;Web;"
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:9
+msgid ""
+"Every day, countless of websites go offline for good. High server costs, "
+"government censorship, venture capitalism are some of the threats, many of "
+"your favorite websites are facing."
+msgstr ""
+"Jeden Tag gehen unzählige Websites für immer offline. Hohe Serverkosten, "
+"staatliche Zensur und Risikokapital gehören zu den Bedrohungen, denen viele "
+"Ihrer Lieblingswebsites ausgesetzt sind."
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:12
+msgid ""
+"Archives allows you to archive any website, including its assets, into a "
+"self-contained hybrid HTML/ZIP. These HTML files can be viewed in any "
+"browser (or in-app), be shared or be extracted like a regular ZIP file. "
+"Archives can additionally view WARC, WACZ, HAR, ZIM and SWF files."
+msgstr ""
+"Mit Archives können Sie jede beliebige Website – einschließlich ihrer Assets "
+"– in einem eigenständigen Hybrid-Format aus HTML und ZIP archivieren. Diese "
+"HTML-Dateien lassen sich in jedem Browser (oder direkt in der App) "
+"betrachten, teilen oder wie eine herkömmliche ZIP-Datei entpacken. Zudem "
+"unterstützt Archives die Anzeige von WARC-, WACZ-, HAR-, ZIM- und SWF-"
+"Dateien."
+
+#: data/ui/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Allgemein"
+
+#: data/ui/help-overlay.ui:14
+msgid "Show Preferences"
+msgstr "Einstellungen anzeigen"
+
+#: data/ui/help-overlay.ui:20
+msgid "About"
+msgstr "Über"
+
+#: data/ui/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Tastenkombinationen anzeigen"
+
+#: data/ui/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Beenden"
+
+#: data/ui/overviewtab.ui:16
+msgid "Go Home"
+msgstr "Zur Startseite wechseln"
+
+#. translators: verb
+#: data/ui/overviewtab.ui:27 src/Views/ArchiveSelectionDialog.vala:96
+msgid "Archive"
+msgstr "Übersetzer: Verb"
+
+#: data/ui/overviewtab.ui:41
+msgid "Menu"
+msgstr "Menü"
+
+#: data/ui/overviewtab.ui:71
+msgid "Back"
+msgstr "Zurück"
+
+#: data/ui/overviewtab.ui:77
+msgid "Forward"
+msgstr "Forwärts"
+
+#: data/ui/overviewtab.ui:109
+msgid "Archive a Website"
+msgstr "Archiviere eine Website"
+
+#: data/ui/overviewtab.ui:119
+msgid "Open Kiwix"
+msgstr "Öffne Kiwix"
+
+#: data/ui/overviewtab.ui:128
+msgid "Open a HTML, WARC, SWF file"
+msgstr "Öffne eine HTML, WARC, SWF Datei"
+
+#: data/ui/overviewtab.ui:151
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: data/ui/overviewtab.ui:155
+msgid "Keyboard Shortcuts"
+msgstr "Tastatur-Kurzbefehle"
+
+#: data/ui/overviewtab.ui:159
+msgid "About Archives"
+msgstr "Über Archives"
+
+#: data/ui/preferences.ui:12
+msgid "General"
+msgstr "Allgemein"
+
+#: data/ui/preferences.ui:15
+msgid "Archiving"
+msgstr "Archiviere"
+
+#: data/ui/preferences.ui:19
+msgid "Custom User Agent"
+msgstr "Benutzerdefinierter User-Agent"
+
+#: data/ui/preferences.ui:25
+msgid "Browser Cache"
+msgstr "Browser Cache"
+
+#: data/ui/preferences.ui:26
+msgid "It can reduce bandwidth usage but may display stale content"
+msgstr ""
+"Es kann die Bandbreitennutzung reduzieren, aber möglicherweise veraltete "
+"Inhalte anzeigen"
+
+#: data/ui/preferences.ui:31
+msgid "Compress HTML"
+msgstr "Komprimiere HTML"
+
+#: data/ui/preferences.ui:36
+msgid "Compress CSS"
+msgstr "Komprimiere CSS"
+
+#: data/ui/preferences.ui:41
+msgid "Set Content Security Policy"
+msgstr "Content Security Policy festlegen"
+
+#: data/ui/preferences.ui:42
+msgid "Prevent external sources from being loaded in the archives"
+msgstr "Verhindern, dass externe Quellen in den Archiven geladen werden"
+
+#: data/ui/preferences.ui:47
+msgid "Remove Hidden Elements"
+msgstr "Entferne versteckte Elemente"
+
+#: data/ui/preferences.ui:48
+msgid "Non-visible elements won't be archived"
+msgstr "Nich sichtbare Elemente werden nicht archiviert"
+
+#: data/ui/preferences.ui:53
+msgid "Remove Unused Styles"
+msgstr "Entferne nicht genutzte Stile"
+
+#: data/ui/preferences.ui:54
+msgid "Styles that do not match any element will be removed"
+msgstr "Stile, die auf kein Element zutreffen, werden entfernt"
+
+#: data/ui/preferences.ui:59
+msgid "Remove Unused Fonts"
+msgstr "Entferne ungenutzte Schriften"
+
+#: data/ui/preferences.ui:64
+msgid "Remove Iframes"
+msgstr "Entferne Iframes"
+
+#: data/ui/preferences.ui:69
+msgid "Display Infobar"
+msgstr "Infoleiste anzeigen"
+
+#: data/ui/preferences.ui:70
+msgid ""
+"If the browser has the SingleFile extension installed, the archived page "
+"will display the archive date at the top right"
+msgstr ""
+"Wenn die SingleFile-Erweiterung im Browser installiert ist, wird das "
+"Archivierungsdatum oben rechts auf der archivierten Seite angezeigt"
+
+#: data/ui/preferences.ui:75
+msgid "Embed Infobar"
+msgstr "Infoleiste einbetten"
+
+#: data/ui/preferences.ui:76
+msgid ""
+"Embed the infobar in the page so it's visible even if the browser does not "
+"have the SingleFile extension installed"
+msgstr ""
+"Binden Sie die Infoleiste so in die Seite ein, dass sie auch dann sichtbar "
+"ist, wenn die SingleFile-Erweiterung nicht im Browser installiert ist"
+
+#: data/ui/preferences.ui:81
+msgid "Save Deferred Images"
+msgstr "Verzögerte Bilder speichern"
+
+#: data/ui/preferences.ui:82
+msgid ""
+"Images that load only when they become visible through scrolling, will be "
+"archived"
+msgstr ""
+"Bilder, die erst beim Scrollen geladen werden, sobald sie sichtbar werden, "
+"werden archiviert"
+
+#: data/ui/preferences.ui:87
+msgid "Block Videos"
+msgstr "Blockiere Videos"
+
+#: data/ui/preferences.ui:88
+msgid "Videos won't be archived"
+msgstr "Videos werden nicht archiviert"
+
+#: data/ui/preferences.ui:93
+msgid "Block Audio Files"
+msgstr "Blockiere Audiodateien"
+
+#: data/ui/preferences.ui:94
+msgid "Audio files won't be archived"
+msgstr "Audiodateien werden nicht archiviert"
+
+#: data/ui/preferences.ui:99
+msgid "Block Scripts"
+msgstr "Blockiere Skripte"
+
+#: data/ui/preferences.ui:100
+msgid "Scripts won't be archived"
+msgstr "Skripte werden nicht archiviert"
+
+#: data/ui/preferences.ui:105
+msgid "Block Images"
+msgstr "Blockiere Images"
+
+#: data/ui/preferences.ui:106
+msgid "Images won't be archived"
+msgstr "Images werden nicht archiviert"
+
+#: data/ui/preferences.ui:111
+msgid "Block Styles"
+msgstr "Blockiere Stile"
+
+#: data/ui/preferences.ui:112
+msgid "Styles won't be archived"
+msgstr "Stile werden nicht archiviert"
+
+#: data/ui/preferences.ui:117
+msgid "Block Fonts"
+msgstr "Blockiere Schriften"
+
+#: data/ui/preferences.ui:118
+msgid "Fonts won't be archived"
+msgstr "Schriften werden nicht archiviert"
+
+#: data/ui/preferences.ui:125
+#, fuzzy
+msgid "ReplayWeb.page"
+msgstr "Webseite.wiedergeben"
+
+#: data/ui/preferences.ui:128
+msgid "Block Ads"
+msgstr "Blockiere Werbung"
+
+#. translators: Name <email@domain.com> or Name https://website.example
+#: src/Application.vala:162
+msgid "translator-credits"
+msgstr "Mitwirkende Übersetzer"
+
+#: src/Application.vala:164
+msgid "Donate"
+msgstr "Spende"
+
+#: src/Application.vala:169
+msgid "Libraries"
+msgstr "Bibliotheken"
+
+#: src/Views/ArchivePage.vala:21
+msgid "Archive All Selected Links"
+msgstr "Archive alle ausgewählten Links"
+
+#: src/Views/ArchivePage.vala:25
+msgid "Archive All Links"
+msgstr "Archiviere alle Links"
+
+#: src/Views/ArchivePage.vala:123
+msgid "Save Archive"
+msgstr "Speichere Archiv"
+
+#: src/Views/ArchivePage.vala:166
+msgid "Archive Link"
+msgstr "Archiv-Link"
+
+#: src/Views/ArchivePage.vala:212 src/Views/ArchivePage.vala:291
+msgid "No links found in selection."
+msgstr "Keine Links in der Auswahl gefunden."
+
+#: src/Views/ArchiveSelectionDialog.vala:68
+msgid "Archive Selected Links"
+msgstr "Archiviere ausgewählte Links"
+
+#: src/Views/ArchiveSelectionDialog.vala:94
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/Widgets/FindBar.vala:11
+msgid "Type to search…"
+msgstr "Tippe um zu suchen…"
+
+#: src/Widgets/FindBar.vala:24
+msgid "Find previous occurrence of the search string"
+msgstr "Vorheriges Vorkommen der Suchzeichenfolge finden"
+
+#: src/Widgets/FindBar.vala:32
+msgid "Find next occurrence of the search string"
+msgstr "Nächstes Vorkommen der Suchzeichenfolge finden"
+
+#: src/Widgets/OverviewTab.vala:103
+msgid "All Supported Files"
+msgstr "Alle unterstützten Dateien"
+
+#: src/Widgets/OverviewTab.vala:113
+msgid "Open"
+msgstr "Offen"

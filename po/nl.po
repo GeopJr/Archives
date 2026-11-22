@@ -1,0 +1,344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-26 03:46+0200\n"
+"PO-Revision-Date: 2026-04-04 08:57+0000\n"
+"Last-Translator: Vistaus <vistaus@noreply.codeberg.org>\n"
+"Language-Team: Dutch <https://translate.codeberg.org/projects/archives/"
+"archives/nl/>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.16.2\n"
+
+#: data/dev.geopjr.Archives.desktop.in:3
+#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:34
+#: data/ui/overviewtab.ui:100 src/Widgets/OverviewTab.vala:26
+#: src/Widgets/OverviewTab.vala:80
+msgid "Archives"
+msgstr "Archieven"
+
+#: data/dev.geopjr.Archives.desktop.in:4
+#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:101
+msgid "Create and view web archives"
+msgstr "Maak en bekijk webarchieven"
+
+#: data/dev.geopjr.Archives.desktop.in:5
+msgid "Website Archiver"
+msgstr "Websitearchivering"
+
+#: data/dev.geopjr.Archives.desktop.in:10
+msgid "archive;singlefile;replayweb;flash;web;"
+msgstr "archief;bestand;bekijken;web;internet;"
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:9
+msgid ""
+"Every day, countless of websites go offline for good. High server costs, "
+"government censorship, venture capitalism are some of the threats, many of "
+"your favorite websites are facing."
+msgstr ""
+"Dagelijks gaan worden tig websites uit de lucht gehaald, door hoge "
+"serverkosten, censuur, kapitalisme of om andere rederen. Dit kan ook bij "
+"jóuw favoriete websites gebeuren."
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:12
+msgid ""
+"Archives allows you to archive any website, including its assets, into a "
+"self-contained hybrid HTML/ZIP. These HTML files can be viewed in any "
+"browser (or in-app), be shared or be extracted like a regular ZIP file. "
+"Archives can additionally view WARC, WACZ, HAR, ZIM and SWF files."
+msgstr ""
+"Met behulp van deze toepassing kun je websites naar keuze volledig "
+"archiveren. Het hele archief is vervolgens beschikbaar als een hybride html-/"
+"zipbestand. De losse html-bestanden kun je met iedere webbrowser of in de "
+"toepassing zelf openen, delen of verder extraheren. Archieven kunnen tevens "
+"swf-, warc-, wacz-, har- en zim-bestanden bevatten."
+
+#: data/ui/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Algemeen"
+
+#: data/ui/help-overlay.ui:14
+msgid "Show Preferences"
+msgstr "Voorkeuren openen"
+
+#: data/ui/help-overlay.ui:20
+msgid "About"
+msgstr "Over"
+
+#: data/ui/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Sneltoetsen tonen"
+
+#: data/ui/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Afsluiten"
+
+#: data/ui/overviewtab.ui:16
+msgid "Go Home"
+msgstr "Startpagina"
+
+#. translators: verb
+#: data/ui/overviewtab.ui:27 src/Views/ArchiveSelectionDialog.vala:96
+msgid "Archive"
+msgstr "Archief"
+
+#: data/ui/overviewtab.ui:41
+msgid "Menu"
+msgstr "Menu"
+
+#: data/ui/overviewtab.ui:71
+msgid "Back"
+msgstr "Vorige"
+
+#: data/ui/overviewtab.ui:77
+msgid "Forward"
+msgstr "Volgende"
+
+#: data/ui/overviewtab.ui:109
+msgid "Archive a Website"
+msgstr "Website archiveren"
+
+#: data/ui/overviewtab.ui:119
+msgid "Open Kiwix"
+msgstr "Kiwix openen"
+
+#: data/ui/overviewtab.ui:128
+msgid "Open a HTML, WARC, SWF file"
+msgstr "Html-, swf- of warc-bestand openen"
+
+#: data/ui/overviewtab.ui:151
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: data/ui/overviewtab.ui:155
+msgid "Keyboard Shortcuts"
+msgstr "Sneltoetsen"
+
+#: data/ui/overviewtab.ui:159
+msgid "About Archives"
+msgstr "Over Archieven"
+
+#: data/ui/preferences.ui:12
+msgid "General"
+msgstr "Algemeen"
+
+#: data/ui/preferences.ui:15
+msgid "Archiving"
+msgstr "Archivering"
+
+#: data/ui/preferences.ui:19
+msgid "Custom User Agent"
+msgstr "Zelfgekozen gebruikersagent"
+
+#: data/ui/preferences.ui:25
+msgid "Browser Cache"
+msgstr "Browsercache"
+
+#: data/ui/preferences.ui:26
+msgid "It can reduce bandwidth usage but may display stale content"
+msgstr ""
+"Let op: deze voorkeur vermindert het dataverbruik, maar vergroot de kans op "
+"verouderde inhoud"
+
+#: data/ui/preferences.ui:31
+msgid "Compress HTML"
+msgstr "Html comprimeren"
+
+#: data/ui/preferences.ui:36
+msgid "Compress CSS"
+msgstr "Css comprimeren"
+
+#: data/ui/preferences.ui:41
+msgid "Set Content Security Policy"
+msgstr "Inhoudsbeveiligingsbeleid instellen"
+
+#: data/ui/preferences.ui:42
+msgid "Prevent external sources from being loaded in the archives"
+msgstr "Geen externe bronnen aanroepen in archieven"
+
+#: data/ui/preferences.ui:47
+msgid "Remove Hidden Elements"
+msgstr "Verborgen elementen wissen"
+
+#: data/ui/preferences.ui:48
+msgid "Non-visible elements won't be archived"
+msgstr "Onzichtbare elementen worden niet gearchiveerd"
+
+#: data/ui/preferences.ui:53
+msgid "Remove Unused Styles"
+msgstr "Ongebruikte stijlen wissen"
+
+#: data/ui/preferences.ui:54
+msgid "Styles that do not match any element will be removed"
+msgstr "Stijlen die niet van toepassing zijn op elementen worden gewist"
+
+#: data/ui/preferences.ui:59
+msgid "Remove Unused Fonts"
+msgstr "Ongebruikte lettertypen wissen"
+
+#: data/ui/preferences.ui:64
+msgid "Remove Iframes"
+msgstr "Iframes verwijderen"
+
+#: data/ui/preferences.ui:69
+msgid "Display Infobar"
+msgstr "Informatiebalk tonen"
+
+#: data/ui/preferences.ui:70
+msgid ""
+"If the browser has the SingleFile extension installed, the archived page "
+"will display the archive date at the top right"
+msgstr ""
+"Als de SingleFile-externsie geïnstalleerd is in de browser, wordt de "
+"archiefdatum rechtsboven op het scherm getoond"
+
+#: data/ui/preferences.ui:75
+msgid "Embed Infobar"
+msgstr "Informatiebalk insluiten"
+
+#: data/ui/preferences.ui:76
+msgid ""
+"Embed the infobar in the page so it's visible even if the browser does not "
+"have the SingleFile extension installed"
+msgstr ""
+"Sluit de informatiebalk in op de pagina, zodat deze ook zonder de SingleFile-"
+"extensie wordt getoond"
+
+#: data/ui/preferences.ui:81
+msgid "Save Deferred Images"
+msgstr "Uitgestelde afbeeldingen opslaan"
+
+#: data/ui/preferences.ui:82
+msgid ""
+"Images that load only when they become visible through scrolling, will be "
+"archived"
+msgstr "Afbeeldingen die alleen geladen worden na scrollen worden gearchiveerd"
+
+#: data/ui/preferences.ui:87
+msgid "Block Videos"
+msgstr "Video's blokkeren"
+
+#: data/ui/preferences.ui:88
+msgid "Videos won't be archived"
+msgstr "Video's worden niet gearchiveerd"
+
+#: data/ui/preferences.ui:93
+msgid "Block Audio Files"
+msgstr "Audiobestanden blokkeren"
+
+#: data/ui/preferences.ui:94
+msgid "Audio files won't be archived"
+msgstr "Audiobestanden worden niet gearchiveerd"
+
+#: data/ui/preferences.ui:99
+msgid "Block Scripts"
+msgstr "Scripts blokkeren"
+
+#: data/ui/preferences.ui:100
+msgid "Scripts won't be archived"
+msgstr "Scripts worden niet gearchiveerd"
+
+#: data/ui/preferences.ui:105
+msgid "Block Images"
+msgstr "Afbeeldingen blokkeren"
+
+#: data/ui/preferences.ui:106
+msgid "Images won't be archived"
+msgstr "Afbeeldingen worden niet gearchiveerd"
+
+#: data/ui/preferences.ui:111
+msgid "Block Styles"
+msgstr "Stijlen blokkeren"
+
+#: data/ui/preferences.ui:112
+msgid "Styles won't be archived"
+msgstr "Stijlen worden niet gearchiveerd"
+
+#: data/ui/preferences.ui:117
+msgid "Block Fonts"
+msgstr "Lettertypen blokkeren"
+
+#: data/ui/preferences.ui:118
+msgid "Fonts won't be archived"
+msgstr "Lettertypen worden niet gearchiveerd"
+
+#: data/ui/preferences.ui:125
+msgid "ReplayWeb.page"
+msgstr "ReplayWeb.page"
+
+#: data/ui/preferences.ui:128
+msgid "Block Ads"
+msgstr "Advertenties blokkeren"
+
+#. translators: Name <email@domain.com> or Name https://website.example
+#: src/Application.vala:162
+msgid "translator-credits"
+msgstr "Heimen Stoffels <vistausss@fastmail.com>"
+
+#: src/Application.vala:164
+msgid "Donate"
+msgstr "Doneren"
+
+#: src/Application.vala:169
+msgid "Libraries"
+msgstr "Bibliotheken"
+
+#: src/Views/ArchivePage.vala:21
+msgid "Archive All Selected Links"
+msgstr "Alle gekozen links archiveren"
+
+#: src/Views/ArchivePage.vala:25
+msgid "Archive All Links"
+msgstr "Alle links archiveren"
+
+#: src/Views/ArchivePage.vala:123
+msgid "Save Archive"
+msgstr "Archief opslaan"
+
+#: src/Views/ArchivePage.vala:166
+msgid "Archive Link"
+msgstr "Link archiveren"
+
+#: src/Views/ArchivePage.vala:212 src/Views/ArchivePage.vala:291
+msgid "No links found in selection."
+msgstr "Er zijn geen links gekozen."
+
+#: src/Views/ArchiveSelectionDialog.vala:68
+msgid "Archive Selected Links"
+msgstr "Gekozen links archiveren"
+
+#: src/Views/ArchiveSelectionDialog.vala:94
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: src/Widgets/FindBar.vala:11
+msgid "Type to search…"
+msgstr "Typ om te zoeken…"
+
+#: src/Widgets/FindBar.vala:24
+msgid "Find previous occurrence of the search string"
+msgstr "Vorig resultaat tonen"
+
+#: src/Widgets/FindBar.vala:32
+msgid "Find next occurrence of the search string"
+msgstr "Volgend resultaat tonen"
+
+#: src/Widgets/OverviewTab.vala:103
+msgid "All Supported Files"
+msgstr "Alle ondersteunde bestanden"
+
+#: src/Widgets/OverviewTab.vala:113
+msgid "Open"
+msgstr "Openen"

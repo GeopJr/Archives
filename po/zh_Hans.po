@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-26 03:46+0200\n"
+"PO-Revision-Date: 2026-04-10 02:57+0000\n"
+"Last-Translator: Outbreak2096 <outbreak2096@noreply.codeberg.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"translate.codeberg.org/projects/archives/archives/zh_Hans/>\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.16.2\n"
+
+#: data/dev.geopjr.Archives.desktop.in:3
+#: data/dev.geopjr.Archives.metainfo.xml.in:6 data/ui/overviewtab.ui:34
+#: data/ui/overviewtab.ui:100 src/Widgets/OverviewTab.vala:26
+#: src/Widgets/OverviewTab.vala:80
+msgid "Archives"
+msgstr "Archives"
+
+#: data/dev.geopjr.Archives.desktop.in:4
+#: data/dev.geopjr.Archives.metainfo.xml.in:7 data/ui/overviewtab.ui:101
+msgid "Create and view web archives"
+msgstr "创建和查看网站归档"
+
+#: data/dev.geopjr.Archives.desktop.in:5
+msgid "Website Archiver"
+msgstr "网站归档工具"
+
+#: data/dev.geopjr.Archives.desktop.in:10
+msgid "archive;singlefile;replayweb;flash;web;"
+msgstr "archive;singlefile;replayweb;flash;web;归档;存档;网站回放;"
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:9
+msgid ""
+"Every day, countless of websites go offline for good. High server costs, "
+"government censorship, venture capitalism are some of the threats, many of "
+"your favorite websites are facing."
+msgstr ""
+"每天都有无数网站永久下线。高昂的服务器成本、政府审查、风险投资等都是许多您喜"
+"爱的网站面临的威胁。"
+
+#: data/dev.geopjr.Archives.metainfo.xml.in:12
+msgid ""
+"Archives allows you to archive any website, including its assets, into a "
+"self-contained hybrid HTML/ZIP. These HTML files can be viewed in any "
+"browser (or in-app), be shared or be extracted like a regular ZIP file. "
+"Archives can additionally view WARC, WACZ, HAR, ZIM and SWF files."
+msgstr ""
+"Archives 允许您将任何网站及其资源归档为独立的混合 HTML/ZIP 文件。这些 HTML 文"
+"件可以在任何浏览器（或应用内）中查看，可以分享，也可以像普通的 ZIP 文件一样解"
+"压。此外，Archives 还可以查看 WARC、WACZ、HAR、ZIM 和 SWF 文件。"
+
+#: data/ui/help-overlay.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr "常规"
+
+#: data/ui/help-overlay.ui:14
+msgid "Show Preferences"
+msgstr "显示首选项"
+
+#: data/ui/help-overlay.ui:20
+msgid "About"
+msgstr "关于"
+
+#: data/ui/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "显示快捷键"
+
+#: data/ui/help-overlay.ui:32
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "退出"
+
+#: data/ui/overviewtab.ui:16
+msgid "Go Home"
+msgstr "返回首页"
+
+#. translators: verb
+#: data/ui/overviewtab.ui:27 src/Views/ArchiveSelectionDialog.vala:96
+msgid "Archive"
+msgstr "归档"
+
+#: data/ui/overviewtab.ui:41
+msgid "Menu"
+msgstr "菜单"
+
+#: data/ui/overviewtab.ui:71
+msgid "Back"
+msgstr "后退"
+
+#: data/ui/overviewtab.ui:77
+msgid "Forward"
+msgstr "前进"
+
+#: data/ui/overviewtab.ui:109
+msgid "Archive a Website"
+msgstr "归档网站"
+
+#: data/ui/overviewtab.ui:119
+msgid "Open Kiwix"
+msgstr "打开 Kiwix"
+
+#: data/ui/overviewtab.ui:128
+msgid "Open a HTML, WARC, SWF file"
+msgstr "打开 HTML、WARC、SWF 文件"
+
+#: data/ui/overviewtab.ui:151
+msgid "Preferences"
+msgstr "首选项"
+
+#: data/ui/overviewtab.ui:155
+msgid "Keyboard Shortcuts"
+msgstr "键盘快捷键"
+
+#: data/ui/overviewtab.ui:159
+msgid "About Archives"
+msgstr "关于 Archives"
+
+#: data/ui/preferences.ui:12
+msgid "General"
+msgstr "常规"
+
+#: data/ui/preferences.ui:15
+msgid "Archiving"
+msgstr "归档"
+
+#: data/ui/preferences.ui:19
+msgid "Custom User Agent"
+msgstr "自定义用户代理"
+
+#: data/ui/preferences.ui:25
+msgid "Browser Cache"
+msgstr "浏览器缓存"
+
+#: data/ui/preferences.ui:26
+msgid "It can reduce bandwidth usage but may display stale content"
+msgstr "可以减少带宽使用，但可能会显示过期内容"
+
+#: data/ui/preferences.ui:31
+msgid "Compress HTML"
+msgstr "压缩 HTML"
+
+#: data/ui/preferences.ui:36
+msgid "Compress CSS"
+msgstr "压缩 CSS"
+
+#: data/ui/preferences.ui:41
+msgid "Set Content Security Policy"
+msgstr "设置内容安全策略"
+
+#: data/ui/preferences.ui:42
+msgid "Prevent external sources from being loaded in the archives"
+msgstr "阻止在归档中加载外部资源"
+
+#: data/ui/preferences.ui:47
+msgid "Remove Hidden Elements"
+msgstr "移除隐藏元素"
+
+#: data/ui/preferences.ui:48
+msgid "Non-visible elements won't be archived"
+msgstr "不可见元素不会被归档"
+
+#: data/ui/preferences.ui:53
+msgid "Remove Unused Styles"
+msgstr "移除未使用样式"
+
+#: data/ui/preferences.ui:54
+msgid "Styles that do not match any element will be removed"
+msgstr "与任何元素不匹配的样式将被移除"
+
+#: data/ui/preferences.ui:59
+msgid "Remove Unused Fonts"
+msgstr "移除未使用字体"
+
+#: data/ui/preferences.ui:64
+msgid "Remove Iframes"
+msgstr "移除 iframe"
+
+#: data/ui/preferences.ui:69
+msgid "Display Infobar"
+msgstr "显示信息栏"
+
+#: data/ui/preferences.ui:70
+msgid ""
+"If the browser has the SingleFile extension installed, the archived page "
+"will display the archive date at the top right"
+msgstr "如果浏览器已安装 SingleFile 扩展，归档页面将在右上角显示归档日期"
+
+#: data/ui/preferences.ui:75
+msgid "Embed Infobar"
+msgstr "嵌入信息栏"
+
+#: data/ui/preferences.ui:76
+msgid ""
+"Embed the infobar in the page so it's visible even if the browser does not "
+"have the SingleFile extension installed"
+msgstr "将信息栏嵌入页面，即使浏览器未安装 SingleFile 扩展也能显示"
+
+#: data/ui/preferences.ui:81
+msgid "Save Deferred Images"
+msgstr "保存延迟加载的图片"
+
+#: data/ui/preferences.ui:82
+msgid ""
+"Images that load only when they become visible through scrolling, will be "
+"archived"
+msgstr "仅在滚动至可见位置时加载的图片才会被归档"
+
+#: data/ui/preferences.ui:87
+msgid "Block Videos"
+msgstr "阻止视频"
+
+#: data/ui/preferences.ui:88
+msgid "Videos won't be archived"
+msgstr "视频不会被归档"
+
+#: data/ui/preferences.ui:93
+msgid "Block Audio Files"
+msgstr "阻止音频文件"
+
+#: data/ui/preferences.ui:94
+msgid "Audio files won't be archived"
+msgstr "音频文件不会被归档"
+
+#: data/ui/preferences.ui:99
+msgid "Block Scripts"
+msgstr "阻止脚本"
+
+#: data/ui/preferences.ui:100
+msgid "Scripts won't be archived"
+msgstr "脚本不会被归档"
+
+#: data/ui/preferences.ui:105
+msgid "Block Images"
+msgstr "阻止图片"
+
+#: data/ui/preferences.ui:106
+msgid "Images won't be archived"
+msgstr "图片不会被归档"
+
+#: data/ui/preferences.ui:111
+msgid "Block Styles"
+msgstr "阻止样式"
+
+#: data/ui/preferences.ui:112
+msgid "Styles won't be archived"
+msgstr "样式不会被归档"
+
+#: data/ui/preferences.ui:117
+msgid "Block Fonts"
+msgstr "阻止字体"
+
+#: data/ui/preferences.ui:118
+msgid "Fonts won't be archived"
+msgstr "字体不会被归档"
+
+#: data/ui/preferences.ui:125
+msgid "ReplayWeb.page"
+msgstr "ReplayWeb.page"
+
+#: data/ui/preferences.ui:128
+msgid "Block Ads"
+msgstr "阻止广告"
+
+#. translators: Name <email@domain.com> or Name https://website.example
+#: src/Application.vala:162
+msgid "translator-credits"
+msgstr "Outbreak2096"
+
+#: src/Application.vala:164
+msgid "Donate"
+msgstr "捐赠"
+
+#: src/Application.vala:169
+msgid "Libraries"
+msgstr "库"
+
+#: src/Views/ArchivePage.vala:21
+msgid "Archive All Selected Links"
+msgstr "归档所有选中的链接"
+
+#: src/Views/ArchivePage.vala:25
+msgid "Archive All Links"
+msgstr "归档所有链接"
+
+#: src/Views/ArchivePage.vala:123
+msgid "Save Archive"
+msgstr "保存归档"
+
+#: src/Views/ArchivePage.vala:166
+msgid "Archive Link"
+msgstr "归档链接"
+
+#: src/Views/ArchivePage.vala:212 src/Views/ArchivePage.vala:291
+msgid "No links found in selection."
+msgstr "未在选中内容中找到链接。"
+
+#: src/Views/ArchiveSelectionDialog.vala:68
+msgid "Archive Selected Links"
+msgstr "归档选中的链接"
+
+#: src/Views/ArchiveSelectionDialog.vala:94
+msgid "Cancel"
+msgstr "取消"
+
+#: src/Widgets/FindBar.vala:11
+msgid "Type to search…"
+msgstr "输入以搜索…"
+
+#: src/Widgets/FindBar.vala:24
+msgid "Find previous occurrence of the search string"
+msgstr "查找上一个搜索字符串匹配项"
+
+#: src/Widgets/FindBar.vala:32
+msgid "Find next occurrence of the search string"
+msgstr "查找下一个搜索字符串匹配项"
+
+#: src/Widgets/OverviewTab.vala:103
+msgid "All Supported Files"
+msgstr "所有支持的文件"
+
+#: src/Widgets/OverviewTab.vala:113
+msgid "Open"
+msgstr "打开"
