@@ -49,6 +49,14 @@
     <control>touch</control>
   </recommends>
   <releases>
+    <release version="0.6.1" date="2025-07-01">
+      <description translate="no">
+        <ul>
+          <li>We moved to Codeberg</li>
+          <li>Bumped tools and dependencies</li>
+        </ul>
+      </description>
+    </release>
     <release version="0.6.0" date="2025-07-01">
       <description translate="no">
         <ul>

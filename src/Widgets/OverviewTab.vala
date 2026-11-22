@@ -133,7 +133,11 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 						title_widget.title = @"$basename - ReplayWeb.page";
 						break;
 					case OpenFileType.HTML:
-						open_html (path);
+						if (path.has_suffix (".zip.html")) {
+							open_html (path, app.add_loaded_file_location (path));
+						} else {
+							open_html (path);
+						}
 						break;
 					default:
 						this.keyword = "";
@@ -251,10 +255,15 @@ public class Archives.Widgets.OverviewTab : Adw.Bin {
 		}
 	}
 
-	private void open_html (string path) {
+	private void open_html (string path, int file_pos = -1) {
 		if (content_page != null) stack.remove (content_page);
 
-		content_page = new Views.HtmlPage (@"file://$(GLib.Uri.escape_string (path, "/"))");
+		content_page = new Views.HtmlPage (
+			file_pos == -1
+			? @"file://$(GLib.Uri.escape_string (path, "/"))"
+			: @"/loaded-file/$(file_pos).zip.html?password=$(app.server.password)",
+			file_pos > -1
+		);
 		stack.add_named (content_page, "content");
 		stack.visible_child_name = "content";
 		this.reveal_bottom_bar = true;

@@ -31,7 +31,7 @@ public class Archives.Widgets.WebView : WebKit.WebView {
 		if (Archives.settings.user_agent != null && Archives.settings.user_agent != "") {
 			webkit_settings.set_user_agent (Archives.settings.user_agent);
 		} else {
-			webkit_settings.set_user_agent_with_application_details (Build.NAME, Build.VERSION);
+			webkit_settings.set_user_agent_with_application_details (Build.NAME, Build.VERSION.replace ("/", "-"));
 		}
 		this.settings = webkit_settings;
 

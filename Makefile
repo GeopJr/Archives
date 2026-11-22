@@ -32,3 +32,11 @@ potfiles:
 	find ./ -not -path '*/.*' -type f -name "*.ui" -exec grep -l "translatable=\"yes\"" {} \; | sort >> po/POTFILES
 	echo "" >> po/POTFILES
 	find ./ -not -path '*/.*' -type f -name "*.vala" -exec grep -l "_(\"\|ngettext" {} \; | sort >> po/POTFILES
+
+fetch_flatpak_hashes:
+	jq -r '.modules[0].sources.[] | select(has("url") and .url != null) | .url' ./build-aux/dev.geopjr.Archives.Devel.json | \
+	while read -r url; do \
+		echo "$$url"; \
+		curl -fsL "$$url" | sha256sum; \
+		echo ""; \
+	done

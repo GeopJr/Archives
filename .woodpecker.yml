@@ -13,5 +13,5 @@ steps:
     depends_on: [lint]
     image: alpine:edge
     commands:
-      - apk add --no-cache meson vala glib-dev gtk4.0-dev json-glib-dev libadwaita-dev libsoup3-dev desktop-file-utils gettext-dev make clang git webkit2gtk-6.0-dev libarchive-dev gvfs
+      - apk add --no-cache meson vala glib-dev gtk4.0-dev json-glib-dev libadwaita-dev libsoup3-dev desktop-file-utils gettext-dev make clang lld musl-dev git webkit2gtk-6.0-dev libarchive-dev gvfs binutils gcc
       - CC=clang make use_libsoup=1 update_bundle build

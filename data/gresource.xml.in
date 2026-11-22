@@ -20,7 +20,6 @@
     <file preprocess="xml-stripblanks">icons/scalable/apps/dev.geopjr.Tuba.svg</file>
 
     <file>style.css</file>
-    <file>style-dark.css</file>
   </gresource>
   <gresource prefix="/dev/geopjr/Archives/replay">
     <file alias="sw.js">vendored/sw.js</file>

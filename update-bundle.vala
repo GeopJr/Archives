@@ -1,11 +1,11 @@
 // https://github.com/gildas-lormeau/SingleFile-MV3/commits/main/
-const string SINGLEFILE_COMMIT_HASH = "849709c2a675054577217efa0d50e7b9e197823e";
+const string SINGLEFILE_COMMIT_HASH = "39bbb800b65ef2fb28ec00a758f575f0fa8e308e";
 // https://github.com/ruffle-rs/ruffle/releases
-const string RUFFLE_URL = "nightly-2025-07-01/ruffle-nightly-2025_07_01-web-selfhosted.zip";
+const string RUFFLE_URL = "nightly-2026-11-22/ruffle-nightly-2026_11_22-web-selfhosted.zip";
 // https://github.com/webrecorder/replayweb.page/tree/gh-pages
-const string REPLAY_COMMIT_HASH = "4f22f525c82cce6f8754ead51c66849b09794571";
+const string REPLAY_COMMIT_HASH = "0b59cc8f988e4d40fc2ae2ab9663fb3f688fc8a4";
 // https://github.com/kiwix/kiwix-js/commits/gh-pages/
-const string KIWIX_HASH = "380f5e3df7a05f0f957021867495c6305b98e7c9";
+const string KIWIX_HASH = "fef7ce4ad8b6c285c15b3451e131df2fc8e817aa";
 
 const string GRESOURCE = "./data/gresource.xml";
 const string PARENT = "./data/vendored";
@@ -340,7 +340,7 @@ void process_ruffle (out string[] to_add_to_gresource) throws GLib.Error {
 		}
 
 		Posix.chdir (prev_dir);
-		File.new_for_path (ruffle_location).delete ();
+		ruffle_zip.delete ();
 		message ("Extracted ruffle.zip");
 	#endif
 
@@ -464,7 +464,7 @@ void process_kiwix (out string[] to_add_to_gresource_kiwix) throws GLib.Error {
 		}
 
 		Posix.chdir (prev_dir);
-		File.new_for_path (kiwix_location).delete ();
+		kiwix_zip.delete ();
 		message ("Extracted kiwix.zip");
 
 		string random_github_folder_for_no_reason = GLib.Path.build_path (Path.DIR_SEPARATOR_S, kiwix_out, @"kiwix-js-$KIWIX_HASH");
